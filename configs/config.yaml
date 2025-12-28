@@ -1,0 +1,22 @@
+simulation:
+  n_steps: 100
+  n_factories: 10
+  n_product_types: 5
+  output_dir: "data/raw"
+
+products:
+  - id: "p_raw_01"
+    name: "Silica Sand"
+    base_price: 20.0
+    is_raw: true
+  - id: "p_comp_01"
+    name: "Glass Sheet"
+    base_price: 60.0
+    is_raw: false
+
+processes:
+  - id: "proc_glass_making"
+    inputs:
+      p_raw_01: 2.0
+    outputs:
+      p_comp_01: 1.0
