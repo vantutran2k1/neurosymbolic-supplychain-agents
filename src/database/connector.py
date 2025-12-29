@@ -5,6 +5,7 @@ from neo4j import GraphDatabase
 
 load_dotenv()
 
+
 class Neo4jConnector:
     _instance = None
 
@@ -24,13 +25,3 @@ class Neo4jConnector:
         with self.driver.session() as session:
             result = session.run(query, parameters)
             return [record for record in result]
-
-    def run_schema_script(self, script_path):
-        with open(script_path, 'r') as file:
-            queries = file.read().split(';')
-
-        with self.driver.session() as session:
-            for query in queries:
-                if query.strip():
-                    print(f"Executing: {query.strip()[:50]}...")
-                    session.run(query)
