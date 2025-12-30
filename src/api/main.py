@@ -2,6 +2,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
 from src.api.routes.market import router as market_router
+from src.api.routes.rag import router as rag_router
 from src.api.routes.supplier import router as supplier_router
 
 
@@ -22,6 +23,7 @@ def create_app() -> FastAPI:
 
     app.include_router(market_router)
     app.include_router(supplier_router)
+    app.include_router(rag_router)
 
     @app.get("/health", tags=["Health"])
     def health_check():
