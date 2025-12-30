@@ -18,6 +18,12 @@ class Neo4jConnector:
             cls._instance.driver = GraphDatabase.driver(uri, auth=(user, password))
         return cls._instance
 
+    def __enter__(self):
+        return self
+
+    def __exit__(self, exc_type, exc, tb):
+        pass
+
     def close(self):
         self.driver.close()
 
