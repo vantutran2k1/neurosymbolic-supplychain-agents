@@ -14,3 +14,12 @@ def run_analysis(request: AgentRequest):
         return {"analysis": result}
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
+
+
+@router.post("/propose", response_model=dict)
+def run_proposal(request: AgentRequest):
+    try:
+        result = analyst.propose_action(request.query)
+        return result
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
