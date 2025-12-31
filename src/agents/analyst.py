@@ -47,53 +47,83 @@ class StrategicAnalyst:
         response = self.llm.generate_response(system_prompt, user_prompt_template)
         return response
 
-    def propose_action(self, user_query: str) -> dict:
+    def propose_action(self, user_query: str, max_retries=3) -> dict:
         context_text = self.retriever.search(user_query)
 
         system_prompt = f"""
         You are a Procurement Agent. 
-        Based on the User Query and Market Context, generate a procurement proposal JSON.
+        Your goal is to create a valid JSON procurement proposal based on constraints.
 
-        CURRENT CONSTRAINTS (For your reference):
+        CONSTRAINTS:
         - Budget: ${self.business_constraints['budget']}
-        - Warehouse Free Space: {self.business_constraints['max_warehouse_capacity'] - self.business_constraints['current_stock']} units
+        - Remaining Warehouse Space: {self.business_constraints['max_warehouse_capacity'] - self.business_constraints['current_stock']} units
+        - Min Lead Time: {self.business_constraints['min_lead_time']} days
 
         OUTPUT FORMAT (Strict JSON):
         {{
-            "reasoning": "Explain why you chose these numbers...",
-            "action": {{
-                "quantity": <integer>,
-                "unit_price": <float>,
-                "delivery_days": <integer>
-            }}
+            "reasoning": "brief explanation",
+            "action": {{ "quantity": <int>, "unit_price": <float>, "delivery_days": <int> }}
         }}
         """
 
-        user_prompt = f"QUERY: {user_query}\nCONTEXT: {context_text}"
+        conversation_history = f"QUERY: {user_query}\nCONTEXT: {context_text}"
 
-        raw_response = self.llm.generate_response(system_prompt, user_prompt)
-        try:
-            start = raw_response.find("{")
-            end = raw_response.rfind("}") + 1
-            json_str = raw_response[start:end]
-            proposal_data = json.loads(json_str)
+        attempt_trace = []
+        for attempt in range(max_retries):
+            print(f"--- Attempt {attempt + 1} ---")
 
-            action = proposal_data["action"]
-
-            is_valid, message = self.guardian.validate_proposal(
-                action, self.business_constraints
+            raw_response = self.llm.generate_response(
+                system_prompt, conversation_history
             )
 
-            final_result = {
-                "llm_proposal": proposal_data,
-                "validation": {"is_valid": is_valid, "status": message},
-            }
-            return final_result
+            try:
+                proposal_data = self._extract_json(raw_response)
+                action = proposal_data["action"]
 
-        except json.JSONDecodeError:
-            return {
-                "error": "Failed to parse LLM response to JSON",
-                "raw": raw_response,
-            }
-        except Exception as e:
-            return {"error": f"System error: {str(e)}"}
+                is_valid, message = self.guardian.validate_proposal(
+                    action, self.business_constraints
+                )
+
+                attempt_trace.append(
+                    {
+                        "attempt": attempt + 1,
+                        "proposal": action,
+                        "valid": is_valid,
+                        "error": message if not is_valid else None,
+                    }
+                )
+
+                if is_valid:
+                    return {
+                        "status": "success",
+                        "final_proposal": proposal_data,
+                        "trace": attempt_trace,
+                    }
+                else:
+                    print(f"Guardian rejected: {message}")
+                    feedback = f"\nSYSTEM FEEDBACK: Your previous proposal was REJECTED because: {message}. \nPlease propose a new valid action that fixes this specific error."
+
+                    conversation_history += (
+                        f"\nASSISTANT: {raw_response}\nUSER: {feedback}"
+                    )
+
+            except Exception as e:
+                print(f"Parsing Error: {e}")
+                conversation_history += (
+                    f"\nSYSTEM: JSON Parsing Error. Please output valid JSON only."
+                )
+
+        return {
+            "status": "failed",
+            "error": "Max retries reached. Agent could not satisfy constraints.",
+            "trace": attempt_trace,
+        }
+
+    @staticmethod
+    def _extract_json(text):
+        try:
+            start = text.find("{")
+            end = text.rfind("}") + 1
+            return json.loads(text[start:end])
+        except:
+            raise ValueError("No JSON found")
