@@ -2,7 +2,9 @@ import gymnasium as gym
 import numpy as np
 from gymnasium import spaces
 
+from src.arena.seller import SellerAgent
 from src.database.connector import Neo4jConnector
+from src.guardian.validator import SymbolicGuardian
 
 
 class SupplyChainNegotiationEnv(gym.Env):
@@ -95,3 +97,108 @@ class SupplyChainNegotiationEnv(gym.Env):
                 reward = -50.0
 
         return self._get_obs(), reward, terminated, truncated, {"offer": my_offer_price}
+
+
+class ConstraintAwareNegotiationEnv(gym.Env):
+    def __init__(self):
+        super(ConstraintAwareNegotiationEnv, self).__init__()
+
+        self.action_space = spaces.Box(
+            low=np.array([0.5, 0.1]), high=np.array([2.0, 1.0]), dtype=np.float32
+        )
+
+        self.observation_space = spaces.Box(
+            low=0, high=10000, shape=(6,), dtype=np.float32
+        )
+
+        self.db = Neo4jConnector()
+        self.guardian = SymbolicGuardian()
+        self.seller = SellerAgent()
+
+        self.constraints = {}
+
+    def reset(self, seed=None, options=None):
+        super().reset(seed=seed)
+
+        self.constraints = {
+            "budget": np.random.uniform(2000, 5000),
+            "max_warehouse_capacity": 1000,
+            "current_stock": np.random.randint(100, 900),
+            "min_lead_time": 3,
+        }
+
+        self.market_price = 100.0
+        self.cost = 80.0
+
+        self.current_round = 0.0
+        self.last_opponent_offer = 0.0
+
+        return self._get_obs(), {}
+
+    def _get_obs(self):
+        obs = np.array(
+            [
+                self.market_price,
+                self.cost,
+                self.constraints["current_stock"],
+                self.constraints["budget"],
+                self.current_round,
+                self.last_opponent_offer,
+            ],
+            dtype=np.float32,
+        )
+        return np.clip(obs, 0, 10000)
+
+    def step(self, action):
+        # 1. Decode Action
+        price_factor = float(action[0])
+        qty_factor = float(action[1])
+
+        # Tính toán đề xuất cụ thể
+        remaining_space = (
+            self.constraints["max_warehouse_capacity"]
+            - self.constraints["current_stock"]
+        )
+        target_quantity = int(remaining_space * qty_factor)
+        target_price = self.market_price * price_factor
+
+        proposal = {
+            "quantity": target_quantity,
+            "unit_price": target_price,
+            "delivery_days": 5,
+        }
+
+        is_valid, violation_reason = self.guardian.validate_proposal(
+            proposal, self.constraints
+        )
+
+        terminated = False
+        truncated = False
+
+        if not is_valid:
+            reward = -10.0
+            info = {"violation": violation_reason}
+        else:
+            state_dict = {
+                "base_price": self.market_price,
+                "current_price": target_price,
+                "messages": [{"content": f"Offer {target_price}"}],
+            }
+
+            seller_decision = self.seller.respond(state_dict)
+
+            if seller_decision["decision"] == "ACCEPT":
+                terminated = True
+                profit = (self.market_price * 1.2 - target_price) * target_quantity
+                reward = profit / 1000.0
+                reward += (10 - self.current_round) * 0.1
+            else:
+                reward = -0.1
+                self.current_round += 1
+                if self.current_round >= 10:
+                    terminated = True
+                    reward = -5.0
+
+            info = {"seller_msg": seller_decision.get("reason")}
+
+        return self._get_obs(), reward, terminated, truncated, info

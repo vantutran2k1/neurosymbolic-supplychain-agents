@@ -67,7 +67,7 @@ def router(state: NegotiationState):
         return END
     if state.get("status") == "failed":
         return END
-    if state["round_count"] > 10:  # Giới hạn 10 vòng
+    if state["round_count"] > 10:
         return END
 
     if state["current_proposer"] == "buyer":
