@@ -1,5 +1,8 @@
 import json
 
+import numpy as np
+from stable_baselines3 import PPO
+
 from src.guardian.validator import SymbolicGuardian
 from src.llm.client import LLMClient
 from src.rag.retriever import HybridRetriever
@@ -18,6 +21,14 @@ class StrategicAnalyst:
             "current_stock": 800,
             "min_lead_time": 3,
         }
+
+        self.rl_model_path = "models/rl/negotiation_ppo.zip"
+        self.rl_agent = None
+        try:
+            self.rl_agent = PPO.load(self.rl_model_path)
+            print("RL Strategic Model loaded successfully.")
+        except:
+            print("RL Model not found. Using heuristic fallback.")
 
     def analyze_market(self, user_query: str) -> str:
         context = self.retriever.search(user_query, top_k=3)
@@ -50,6 +61,13 @@ class StrategicAnalyst:
     def propose_action(self, user_query: str, max_retries=3) -> dict:
         context_text = self.retriever.search(user_query)
 
+        market_price = 100.0
+        cost = 80.0
+        inventory = self.business_constraints["current_stock"]
+
+        target_factor = self._get_optimal_price_factor(market_price, cost, inventory)
+        target_price = market_price * target_factor
+
         system_prompt = f"""
         You are a Procurement Agent. 
         Your goal is to create a valid JSON procurement proposal based on constraints.
@@ -58,6 +76,8 @@ class StrategicAnalyst:
         - Budget: ${self.business_constraints['budget']}
         - Remaining Warehouse Space: {self.business_constraints['max_warehouse_capacity'] - self.business_constraints['current_stock']} units
         - Min Lead Time: {self.business_constraints['min_lead_time']} days
+        - Recommended Target Price: ${target_price:.2f} (Based on inventory optimization).
+        - Try to negotiate close to this price.
 
         OUTPUT FORMAT (Strict JSON):
         {{
@@ -118,6 +138,16 @@ class StrategicAnalyst:
             "error": "Max retries reached. Agent could not satisfy constraints.",
             "trace": attempt_trace,
         }
+
+    def _get_optimal_price_factor(self, current_price, cost, inventory):
+        if not self.rl_agent:
+            return 1.1
+
+        obs = np.array([current_price, cost, inventory, 0, 0], dtype=np.float32)
+
+        action, _states = self.rl_agent.predict(obs, deterministic=True)
+        price_factor = float(action[0])
+        return price_factor
 
     @staticmethod
     def _extract_json(text):

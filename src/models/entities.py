@@ -22,7 +22,6 @@ class Product(BaseModel):
     @classmethod
     @field_validator("production_cost")
     def cost_must_be_lower_than_price(cls, v, values):
-        # Validate logic cơ bản: Giá vốn < Giá bán cơ sở
         if "base_price" in values.data and v > values.data["base_price"]:
             raise ValueError("Production cost cannot be higher than base price")
         return v
