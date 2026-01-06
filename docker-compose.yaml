@@ -8,7 +8,7 @@ services:
     environment:
       - NEO4J_AUTH=neo4j/password123
       - NEO4J_ACCEPT_LICENSE_AGREEMENT=yes
-      - NEO4J_PLUGINS=["apoc", "graph-data-science"]
+      - NEO4J_PLUGINS=["apoc"]
       - NEO4J_server_memory_heap_initial__size=2G
       - NEO4J_server_memory_heap_max__size=4G
       - NEO4J_server_memory_pagecache_size=2G
@@ -18,10 +18,9 @@ services:
       - NEO4J_apoc_export_file_enabled=true
     volumes:
       - ./data/neo4j_data:/data
-      - ./data/neo4j_import:/var/lib/neo4j/import
       - ./docker/neo4j/plugins:/plugins
     healthcheck:
-      test: [ "CMD-SHELL", "wget --no-verbose --tries=1 --spider localhost:7474 || exit 1" ]
+      test: [ "CMD", "cypher-shell", "-u", "neo4j", "-p", "password123", "RETURN 1" ]
       interval: 10s
       timeout: 5s
       retries: 5
