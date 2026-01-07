@@ -5,45 +5,31 @@ import numpy as np
 
 @dataclass
 class Product:
-    """
-    Represents a node in the production graph[cite: 186].
-    id=0 is Raw Material, id=n-1 is Final Product.
-    """
-
     product_id: int
     name: str
-    catalog_price: float  # Initial price reference [cite: 233]
+    catalog_price: float
 
 
 @dataclass
 class Contract:
-    """
-    A binding agreement between two agents[cite: 369].
-    Used for both Exogenous (World-Agent) and Negotiated (Agent-Agent) contracts.
-    """
-
     contract_id: str
     seller_id: str
     buyer_id: str
     product_id: int
-    quantity: int  # q_c [cite: 363]
-    unit_price: int  # p_c [cite: 362]
-    delivery_day: int  # t [cite: 365]
+    quantity: int
+    unit_price: int
+    delivery_day: int
     signed_day: int
 
 
 @dataclass
 class FactoryProfile:
-    """
-    Private static attributes of a factory[cite: 317, 319].
-    """
-
     factory_id: str
-    level: int  # Layer in supply chain (0 to n-1) [cite: 197]
-    lines: int  # lambda_a: Production capacity [cite: 363]
-    production_cost: float  # m_a: Cost to convert input -> output [cite: 317]
+    level: int  # Supply Chain Layer (0=Upstream, N=Downstream)
+    lines: int  # Lambda: Max production capacity
+    production_cost: float  # Cost to convert input->output
 
-    # Distribution parameters for penalties (Private info)
+    # Stochastic cost distribution parameters
     storage_cost_mean: float
     storage_cost_std: float
     shortfall_penalty_mean: float
@@ -52,29 +38,18 @@ class FactoryProfile:
 
 @dataclass
 class AgentState:
-    """
-    Dynamic state updated every simulation step[cite: 328].
-    """
-
     balance: float  # Current money available
-    inventory: int  # Current input stock (S_in) [cite: 404]
+    inventory: int  # Current input stock
     bankruptcy: bool = False
 
-    # Daily sampled costs (stochastic) [cite: 325]
     current_storage_cost: float = 0.0
     current_shortfall_penalty: float = 0.0
 
 
 @dataclass
 class MarketState:
-    """
-    Maintains the recursive state for Equation 7.
-    """
-
     product_id: int
     catalog_price: float
-    gamma: float = 0.9  # Discount factor [cite: 574]
-    q_minus_1: float = 50.0  # Prior quantity weight [cite: 574]
 
     # Recursive accumulators
     acc_numerator: float = field(init=False)
@@ -84,7 +59,8 @@ class MarketState:
     def __post_init__(self):
         # Initialize for Day 0 (Before any trading)
         # Formula reduces to catalog price when d=0
-        self.acc_numerator = self.q_minus_1 * self.catalog_price
+        q_minus_1 = 50.0  # Initial weight
+        self.acc_numerator = q_minus_1 * self.catalog_price
         self.acc_denominator = self.q_minus_1
         self.current_trading_price = self.catalog_price
 

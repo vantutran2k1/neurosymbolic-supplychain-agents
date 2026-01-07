@@ -1,0 +1,2588 @@
+[
+  {
+    "simulation_id": "sim_1767772006",
+    "day": 0,
+    "event_type": "MARKET_UPDATE",
+    "agent_id": "SYSTEM",
+    "details": {
+      "product_id": 0,
+      "trading_price": 10.0,
+      "catalog_price": 10
+    },
+    "timestamp": 1767772006.4608262
+  },
+  {
+    "simulation_id": "sim_1767772006",
+    "day": 0,
+    "event_type": "MARKET_UPDATE",
+    "agent_id": "SYSTEM",
+    "details": {
+      "product_id": 1,
+      "trading_price": 20.0,
+      "catalog_price": 20
+    },
+    "timestamp": 1767772006.460829
+  },
+  {
+    "simulation_id": "sim_1767772006",
+    "day": 0,
+    "event_type": "MARKET_UPDATE",
+    "agent_id": "SYSTEM",
+    "details": {
+      "product_id": 2,
+      "trading_price": 30.0,
+      "catalog_price": 30
+    },
+    "timestamp": 1767772006.46083
+  },
+  {
+    "simulation_id": "sim_1767772006",
+    "day": 0,
+    "event_type": "NEGOTIATION_START",
+    "agent_id": "SYSTEM",
+    "details": {
+      "session_id": "L0_Agent_0-L1_Agent_0-0",
+      "seller": "L0_Agent_0",
+      "buyer": "L1_Agent_0",
+      "product": 1,
+      "seller_reservation": 18,
+      "buyer_reservation": 21
+    },
+    "timestamp": 1767772006.4608698
+  },
+  {
+    "simulation_id": "sim_1767772006",
+    "day": 0,
+    "event_type": "OFFER_MADE",
+    "agent_id": "L0_Agent_0",
+    "details": {
+      "session_id": "L0_Agent_0-L1_Agent_0-0",
+      "step": 0,
+      "role": "seller",
+      "price": 22,
+      "quantity": 10
+    },
+    "timestamp": 1767772006.460876
+  },
+  {
+    "simulation_id": "sim_1767772006",
+    "day": 0,
+    "event_type": "OFFER_MADE",
+    "agent_id": "L1_Agent_0",
+    "details": {
+      "session_id": "L0_Agent_0-L1_Agent_0-0",
+      "step": 1,
+      "role": "buyer",
+      "price": 18,
+      "quantity": 10
+    },
+    "timestamp": 1767772006.460883
+  },
+  {
+    "simulation_id": "sim_1767772006",
+    "day": 0,
+    "event_type": "CONTRACT_SIGNED",
+    "agent_id": "L0_Agent_0",
+    "details": {
+      "session_id": "L0_Agent_0-L1_Agent_0-0",
+      "step": 1,
+      "final_price": 18,
+      "final_quantity": 10
+    },
+    "timestamp": 1767772006.460885
+  },
+  {
+    "simulation_id": "sim_1767772006",
+    "day": 0,
+    "event_type": "CONTRACT_SIGNED",
+    "agent_id": "SYSTEM",
+    "details": {
+      "seller": "L0_Agent_0",
+      "buyer": "L1_Agent_0",
+      "product": 1,
+      "quantity": 10,
+      "price": 18
+    },
+    "timestamp": 1767772006.460886
+  },
+  {
+    "simulation_id": "sim_1767772006",
+    "day": 0,
+    "event_type": "NEGOTIATION_START",
+    "agent_id": "SYSTEM",
+    "details": {
+      "session_id": "L0_Agent_0-L1_Agent_1-0",
+      "seller": "L0_Agent_0",
+      "buyer": "L1_Agent_1",
+      "product": 1,
+      "seller_reservation": 18,
+      "buyer_reservation": 21
+    },
+    "timestamp": 1767772006.4608908
+  },
+  {
+    "simulation_id": "sim_1767772006",
+    "day": 0,
+    "event_type": "OFFER_MADE",
+    "agent_id": "L0_Agent_0",
+    "details": {
+      "session_id": "L0_Agent_0-L1_Agent_1-0",
+      "step": 0,
+      "role": "seller",
+      "price": 22,
+      "quantity": 10
+    },
+    "timestamp": 1767772006.460895
+  },
+  {
+    "simulation_id": "sim_1767772006",
+    "day": 0,
+    "event_type": "OFFER_MADE",
+    "agent_id": "L1_Agent_1",
+    "details": {
+      "session_id": "L0_Agent_0-L1_Agent_1-0",
+      "step": 1,
+      "role": "buyer",
+      "price": 18,
+      "quantity": 10
+    },
+    "timestamp": 1767772006.4608982
+  },
+  {
+    "simulation_id": "sim_1767772006",
+    "day": 0,
+    "event_type": "CONTRACT_SIGNED",
+    "agent_id": "L0_Agent_0",
+    "details": {
+      "session_id": "L0_Agent_0-L1_Agent_1-0",
+      "step": 1,
+      "final_price": 18,
+      "final_quantity": 10
+    },
+    "timestamp": 1767772006.4609
+  },
+  {
+    "simulation_id": "sim_1767772006",
+    "day": 0,
+    "event_type": "CONTRACT_SIGNED",
+    "agent_id": "SYSTEM",
+    "details": {
+      "seller": "L0_Agent_0",
+      "buyer": "L1_Agent_1",
+      "product": 1,
+      "quantity": 10,
+      "price": 18
+    },
+    "timestamp": 1767772006.460901
+  },
+  {
+    "simulation_id": "sim_1767772006",
+    "day": 0,
+    "event_type": "NEGOTIATION_START",
+    "agent_id": "SYSTEM",
+    "details": {
+      "session_id": "L0_Agent_0-L1_Agent_2-0",
+      "seller": "L0_Agent_0",
+      "buyer": "L1_Agent_2",
+      "product": 1,
+      "seller_reservation": 18,
+      "buyer_reservation": 21
+    },
+    "timestamp": 1767772006.460905
+  },
+  {
+    "simulation_id": "sim_1767772006",
+    "day": 0,
+    "event_type": "OFFER_MADE",
+    "agent_id": "L1_Agent_2",
+    "details": {
+      "session_id": "L0_Agent_0-L1_Agent_2-0",
+      "step": 0,
+      "role": "buyer",
+      "price": 18,
+      "quantity": 10
+    },
+    "timestamp": 1767772006.460908
+  },
+  {
+    "simulation_id": "sim_1767772006",
+    "day": 0,
+    "event_type": "CONTRACT_SIGNED",
+    "agent_id": "L0_Agent_0",
+    "details": {
+      "session_id": "L0_Agent_0-L1_Agent_2-0",
+      "step": 0,
+      "final_price": 18,
+      "final_quantity": 10
+    },
+    "timestamp": 1767772006.4609091
+  },
+  {
+    "simulation_id": "sim_1767772006",
+    "day": 0,
+    "event_type": "CONTRACT_SIGNED",
+    "agent_id": "SYSTEM",
+    "details": {
+      "seller": "L0_Agent_0",
+      "buyer": "L1_Agent_2",
+      "product": 1,
+      "quantity": 10,
+      "price": 18
+    },
+    "timestamp": 1767772006.46091
+  },
+  {
+    "simulation_id": "sim_1767772006",
+    "day": 0,
+    "event_type": "NEGOTIATION_START",
+    "agent_id": "SYSTEM",
+    "details": {
+      "session_id": "L0_Agent_1-L1_Agent_0-0",
+      "seller": "L0_Agent_1",
+      "buyer": "L1_Agent_0",
+      "product": 1,
+      "seller_reservation": 18,
+      "buyer_reservation": 21
+    },
+    "timestamp": 1767772006.460913
+  },
+  {
+    "simulation_id": "sim_1767772006",
+    "day": 0,
+    "event_type": "OFFER_MADE",
+    "agent_id": "L0_Agent_1",
+    "details": {
+      "session_id": "L0_Agent_1-L1_Agent_0-0",
+      "step": 0,
+      "role": "seller",
+      "price": 22,
+      "quantity": 10
+    },
+    "timestamp": 1767772006.4609149
+  },
+  {
+    "simulation_id": "sim_1767772006",
+    "day": 0,
+    "event_type": "OFFER_MADE",
+    "agent_id": "L1_Agent_0",
+    "details": {
+      "session_id": "L0_Agent_1-L1_Agent_0-0",
+      "step": 1,
+      "role": "buyer",
+      "price": 18,
+      "quantity": 10
+    },
+    "timestamp": 1767772006.460918
+  },
+  {
+    "simulation_id": "sim_1767772006",
+    "day": 0,
+    "event_type": "CONTRACT_SIGNED",
+    "agent_id": "L0_Agent_1",
+    "details": {
+      "session_id": "L0_Agent_1-L1_Agent_0-0",
+      "step": 1,
+      "final_price": 18,
+      "final_quantity": 10
+    },
+    "timestamp": 1767772006.46092
+  },
+  {
+    "simulation_id": "sim_1767772006",
+    "day": 0,
+    "event_type": "CONTRACT_SIGNED",
+    "agent_id": "SYSTEM",
+    "details": {
+      "seller": "L0_Agent_1",
+      "buyer": "L1_Agent_0",
+      "product": 1,
+      "quantity": 10,
+      "price": 18
+    },
+    "timestamp": 1767772006.460921
+  },
+  {
+    "simulation_id": "sim_1767772006",
+    "day": 0,
+    "event_type": "NEGOTIATION_START",
+    "agent_id": "SYSTEM",
+    "details": {
+      "session_id": "L0_Agent_1-L1_Agent_1-0",
+      "seller": "L0_Agent_1",
+      "buyer": "L1_Agent_1",
+      "product": 1,
+      "seller_reservation": 18,
+      "buyer_reservation": 21
+    },
+    "timestamp": 1767772006.460923
+  },
+  {
+    "simulation_id": "sim_1767772006",
+    "day": 0,
+    "event_type": "OFFER_MADE",
+    "agent_id": "L0_Agent_1",
+    "details": {
+      "session_id": "L0_Agent_1-L1_Agent_1-0",
+      "step": 0,
+      "role": "seller",
+      "price": 22,
+      "quantity": 10
+    },
+    "timestamp": 1767772006.4609249
+  },
+  {
+    "simulation_id": "sim_1767772006",
+    "day": 0,
+    "event_type": "OFFER_MADE",
+    "agent_id": "L1_Agent_1",
+    "details": {
+      "session_id": "L0_Agent_1-L1_Agent_1-0",
+      "step": 1,
+      "role": "buyer",
+      "price": 18,
+      "quantity": 10
+    },
+    "timestamp": 1767772006.460928
+  },
+  {
+    "simulation_id": "sim_1767772006",
+    "day": 0,
+    "event_type": "CONTRACT_SIGNED",
+    "agent_id": "L0_Agent_1",
+    "details": {
+      "session_id": "L0_Agent_1-L1_Agent_1-0",
+      "step": 1,
+      "final_price": 18,
+      "final_quantity": 10
+    },
+    "timestamp": 1767772006.46093
+  },
+  {
+    "simulation_id": "sim_1767772006",
+    "day": 0,
+    "event_type": "CONTRACT_SIGNED",
+    "agent_id": "SYSTEM",
+    "details": {
+      "seller": "L0_Agent_1",
+      "buyer": "L1_Agent_1",
+      "product": 1,
+      "quantity": 10,
+      "price": 18
+    },
+    "timestamp": 1767772006.46093
+  },
+  {
+    "simulation_id": "sim_1767772006",
+    "day": 0,
+    "event_type": "NEGOTIATION_START",
+    "agent_id": "SYSTEM",
+    "details": {
+      "session_id": "L0_Agent_1-L1_Agent_2-0",
+      "seller": "L0_Agent_1",
+      "buyer": "L1_Agent_2",
+      "product": 1,
+      "seller_reservation": 18,
+      "buyer_reservation": 21
+    },
+    "timestamp": 1767772006.4609332
+  },
+  {
+    "simulation_id": "sim_1767772006",
+    "day": 0,
+    "event_type": "OFFER_MADE",
+    "agent_id": "L0_Agent_1",
+    "details": {
+      "session_id": "L0_Agent_1-L1_Agent_2-0",
+      "step": 0,
+      "role": "seller",
+      "price": 22,
+      "quantity": 10
+    },
+    "timestamp": 1767772006.4609349
+  },
+  {
+    "simulation_id": "sim_1767772006",
+    "day": 0,
+    "event_type": "OFFER_MADE",
+    "agent_id": "L1_Agent_2",
+    "details": {
+      "session_id": "L0_Agent_1-L1_Agent_2-0",
+      "step": 1,
+      "role": "buyer",
+      "price": 18,
+      "quantity": 10
+    },
+    "timestamp": 1767772006.460937
+  },
+  {
+    "simulation_id": "sim_1767772006",
+    "day": 0,
+    "event_type": "CONTRACT_SIGNED",
+    "agent_id": "L0_Agent_1",
+    "details": {
+      "session_id": "L0_Agent_1-L1_Agent_2-0",
+      "step": 1,
+      "final_price": 18,
+      "final_quantity": 10
+    },
+    "timestamp": 1767772006.460939
+  },
+  {
+    "simulation_id": "sim_1767772006",
+    "day": 0,
+    "event_type": "CONTRACT_SIGNED",
+    "agent_id": "SYSTEM",
+    "details": {
+      "seller": "L0_Agent_1",
+      "buyer": "L1_Agent_2",
+      "product": 1,
+      "quantity": 10,
+      "price": 18
+    },
+    "timestamp": 1767772006.4609401
+  },
+  {
+    "simulation_id": "sim_1767772006",
+    "day": 0,
+    "event_type": "NEGOTIATION_START",
+    "agent_id": "SYSTEM",
+    "details": {
+      "session_id": "L0_Agent_2-L1_Agent_0-0",
+      "seller": "L0_Agent_2",
+      "buyer": "L1_Agent_0",
+      "product": 1,
+      "seller_reservation": 18,
+      "buyer_reservation": 21
+    },
+    "timestamp": 1767772006.460944
+  },
+  {
+    "simulation_id": "sim_1767772006",
+    "day": 0,
+    "event_type": "OFFER_MADE",
+    "agent_id": "L0_Agent_2",
+    "details": {
+      "session_id": "L0_Agent_2-L1_Agent_0-0",
+      "step": 0,
+      "role": "seller",
+      "price": 22,
+      "quantity": 10
+    },
+    "timestamp": 1767772006.460947
+  },
+  {
+    "simulation_id": "sim_1767772006",
+    "day": 0,
+    "event_type": "OFFER_MADE",
+    "agent_id": "L1_Agent_0",
+    "details": {
+      "session_id": "L0_Agent_2-L1_Agent_0-0",
+      "step": 1,
+      "role": "buyer",
+      "price": 18,
+      "quantity": 10
+    },
+    "timestamp": 1767772006.460951
+  },
+  {
+    "simulation_id": "sim_1767772006",
+    "day": 0,
+    "event_type": "CONTRACT_SIGNED",
+    "agent_id": "L0_Agent_2",
+    "details": {
+      "session_id": "L0_Agent_2-L1_Agent_0-0",
+      "step": 1,
+      "final_price": 18,
+      "final_quantity": 10
+    },
+    "timestamp": 1767772006.460953
+  },
+  {
+    "simulation_id": "sim_1767772006",
+    "day": 0,
+    "event_type": "CONTRACT_SIGNED",
+    "agent_id": "SYSTEM",
+    "details": {
+      "seller": "L0_Agent_2",
+      "buyer": "L1_Agent_0",
+      "product": 1,
+      "quantity": 10,
+      "price": 18
+    },
+    "timestamp": 1767772006.4609542
+  },
+  {
+    "simulation_id": "sim_1767772006",
+    "day": 0,
+    "event_type": "NEGOTIATION_START",
+    "agent_id": "SYSTEM",
+    "details": {
+      "session_id": "L0_Agent_2-L1_Agent_1-0",
+      "seller": "L0_Agent_2",
+      "buyer": "L1_Agent_1",
+      "product": 1,
+      "seller_reservation": 18,
+      "buyer_reservation": 21
+    },
+    "timestamp": 1767772006.4609568
+  },
+  {
+    "simulation_id": "sim_1767772006",
+    "day": 0,
+    "event_type": "OFFER_MADE",
+    "agent_id": "L0_Agent_2",
+    "details": {
+      "session_id": "L0_Agent_2-L1_Agent_1-0",
+      "step": 0,
+      "role": "seller",
+      "price": 22,
+      "quantity": 10
+    },
+    "timestamp": 1767772006.460959
+  },
+  {
+    "simulation_id": "sim_1767772006",
+    "day": 0,
+    "event_type": "OFFER_MADE",
+    "agent_id": "L1_Agent_1",
+    "details": {
+      "session_id": "L0_Agent_2-L1_Agent_1-0",
+      "step": 1,
+      "role": "buyer",
+      "price": 18,
+      "quantity": 10
+    },
+    "timestamp": 1767772006.460963
+  },
+  {
+    "simulation_id": "sim_1767772006",
+    "day": 0,
+    "event_type": "CONTRACT_SIGNED",
+    "agent_id": "L0_Agent_2",
+    "details": {
+      "session_id": "L0_Agent_2-L1_Agent_1-0",
+      "step": 1,
+      "final_price": 18,
+      "final_quantity": 10
+    },
+    "timestamp": 1767772006.4609642
+  },
+  {
+    "simulation_id": "sim_1767772006",
+    "day": 0,
+    "event_type": "CONTRACT_SIGNED",
+    "agent_id": "SYSTEM",
+    "details": {
+      "seller": "L0_Agent_2",
+      "buyer": "L1_Agent_1",
+      "product": 1,
+      "quantity": 10,
+      "price": 18
+    },
+    "timestamp": 1767772006.4609652
+  },
+  {
+    "simulation_id": "sim_1767772006",
+    "day": 0,
+    "event_type": "NEGOTIATION_START",
+    "agent_id": "SYSTEM",
+    "details": {
+      "session_id": "L0_Agent_2-L1_Agent_2-0",
+      "seller": "L0_Agent_2",
+      "buyer": "L1_Agent_2",
+      "product": 1,
+      "seller_reservation": 18,
+      "buyer_reservation": 21
+    },
+    "timestamp": 1767772006.460968
+  },
+  {
+    "simulation_id": "sim_1767772006",
+    "day": 0,
+    "event_type": "OFFER_MADE",
+    "agent_id": "L0_Agent_2",
+    "details": {
+      "session_id": "L0_Agent_2-L1_Agent_2-0",
+      "step": 0,
+      "role": "seller",
+      "price": 22,
+      "quantity": 10
+    },
+    "timestamp": 1767772006.46097
+  },
+  {
+    "simulation_id": "sim_1767772006",
+    "day": 0,
+    "event_type": "OFFER_MADE",
+    "agent_id": "L1_Agent_2",
+    "details": {
+      "session_id": "L0_Agent_2-L1_Agent_2-0",
+      "step": 1,
+      "role": "buyer",
+      "price": 18,
+      "quantity": 10
+    },
+    "timestamp": 1767772006.460972
+  },
+  {
+    "simulation_id": "sim_1767772006",
+    "day": 0,
+    "event_type": "CONTRACT_SIGNED",
+    "agent_id": "L0_Agent_2",
+    "details": {
+      "session_id": "L0_Agent_2-L1_Agent_2-0",
+      "step": 1,
+      "final_price": 18,
+      "final_quantity": 10
+    },
+    "timestamp": 1767772006.460974
+  },
+  {
+    "simulation_id": "sim_1767772006",
+    "day": 0,
+    "event_type": "CONTRACT_SIGNED",
+    "agent_id": "SYSTEM",
+    "details": {
+      "seller": "L0_Agent_2",
+      "buyer": "L1_Agent_2",
+      "product": 1,
+      "quantity": 10,
+      "price": 18
+    },
+    "timestamp": 1767772006.4609752
+  },
+  {
+    "simulation_id": "sim_1767772006",
+    "day": 1,
+    "event_type": "MARKET_UPDATE",
+    "agent_id": "SYSTEM",
+    "details": {
+      "product_id": 0,
+      "trading_price": 10.0,
+      "catalog_price": 10
+    },
+    "timestamp": 1767772006.461055
+  },
+  {
+    "simulation_id": "sim_1767772006",
+    "day": 1,
+    "event_type": "MARKET_UPDATE",
+    "agent_id": "SYSTEM",
+    "details": {
+      "product_id": 1,
+      "trading_price": 18.714285714285715,
+      "catalog_price": 20
+    },
+    "timestamp": 1767772006.461056
+  },
+  {
+    "simulation_id": "sim_1767772006",
+    "day": 1,
+    "event_type": "MARKET_UPDATE",
+    "agent_id": "SYSTEM",
+    "details": {
+      "product_id": 2,
+      "trading_price": 30.0,
+      "catalog_price": 30
+    },
+    "timestamp": 1767772006.461057
+  },
+  {
+    "simulation_id": "sim_1767772006",
+    "day": 1,
+    "event_type": "NEGOTIATION_START",
+    "agent_id": "SYSTEM",
+    "details": {
+      "session_id": "L0_Agent_0-L1_Agent_0-1",
+      "seller": "L0_Agent_0",
+      "buyer": "L1_Agent_0",
+      "product": 1,
+      "seller_reservation": 16,
+      "buyer_reservation": 19
+    },
+    "timestamp": 1767772006.4610748
+  },
+  {
+    "simulation_id": "sim_1767772006",
+    "day": 1,
+    "event_type": "OFFER_MADE",
+    "agent_id": "L1_Agent_0",
+    "details": {
+      "session_id": "L0_Agent_0-L1_Agent_0-1",
+      "step": 0,
+      "role": "buyer",
+      "price": 16,
+      "quantity": 10
+    },
+    "timestamp": 1767772006.461078
+  },
+  {
+    "simulation_id": "sim_1767772006",
+    "day": 1,
+    "event_type": "CONTRACT_SIGNED",
+    "agent_id": "L0_Agent_0",
+    "details": {
+      "session_id": "L0_Agent_0-L1_Agent_0-1",
+      "step": 0,
+      "final_price": 16,
+      "final_quantity": 10
+    },
+    "timestamp": 1767772006.4610791
+  },
+  {
+    "simulation_id": "sim_1767772006",
+    "day": 1,
+    "event_type": "CONTRACT_SIGNED",
+    "agent_id": "SYSTEM",
+    "details": {
+      "seller": "L0_Agent_0",
+      "buyer": "L1_Agent_0",
+      "product": 1,
+      "quantity": 10,
+      "price": 16
+    },
+    "timestamp": 1767772006.46108
+  },
+  {
+    "simulation_id": "sim_1767772006",
+    "day": 1,
+    "event_type": "NEGOTIATION_START",
+    "agent_id": "SYSTEM",
+    "details": {
+      "session_id": "L0_Agent_0-L1_Agent_1-1",
+      "seller": "L0_Agent_0",
+      "buyer": "L1_Agent_1",
+      "product": 1,
+      "seller_reservation": 17,
+      "buyer_reservation": 19
+    },
+    "timestamp": 1767772006.461083
+  },
+  {
+    "simulation_id": "sim_1767772006",
+    "day": 1,
+    "event_type": "OFFER_MADE",
+    "agent_id": "L1_Agent_1",
+    "details": {
+      "session_id": "L0_Agent_0-L1_Agent_1-1",
+      "step": 0,
+      "role": "buyer",
+      "price": 16,
+      "quantity": 10
+    },
+    "timestamp": 1767772006.4610848
+  },
+  {
+    "simulation_id": "sim_1767772006",
+    "day": 1,
+    "event_type": "OFFER_MADE",
+    "agent_id": "L0_Agent_0",
+    "details": {
+      "session_id": "L0_Agent_0-L1_Agent_1-1",
+      "step": 1,
+      "role": "seller",
+      "price": 20,
+      "quantity": 10
+    },
+    "timestamp": 1767772006.461088
+  },
+  {
+    "simulation_id": "sim_1767772006",
+    "day": 1,
+    "event_type": "OFFER_MADE",
+    "agent_id": "L1_Agent_1",
+    "details": {
+      "session_id": "L0_Agent_0-L1_Agent_1-1",
+      "step": 2,
+      "role": "buyer",
+      "price": 16,
+      "quantity": 10
+    },
+    "timestamp": 1767772006.461091
+  },
+  {
+    "simulation_id": "sim_1767772006",
+    "day": 1,
+    "event_type": "OFFER_MADE",
+    "agent_id": "L0_Agent_0",
+    "details": {
+      "session_id": "L0_Agent_0-L1_Agent_1-1",
+      "step": 3,
+      "role": "seller",
+      "price": 20,
+      "quantity": 10
+    },
+    "timestamp": 1767772006.461094
+  },
+  {
+    "simulation_id": "sim_1767772006",
+    "day": 1,
+    "event_type": "OFFER_MADE",
+    "agent_id": "L1_Agent_1",
+    "details": {
+      "session_id": "L0_Agent_0-L1_Agent_1-1",
+      "step": 4,
+      "role": "buyer",
+      "price": 16,
+      "quantity": 10
+    },
+    "timestamp": 1767772006.461096
+  },
+  {
+    "simulation_id": "sim_1767772006",
+    "day": 1,
+    "event_type": "OFFER_MADE",
+    "agent_id": "L0_Agent_0",
+    "details": {
+      "session_id": "L0_Agent_0-L1_Agent_1-1",
+      "step": 5,
+      "role": "seller",
+      "price": 20,
+      "quantity": 10
+    },
+    "timestamp": 1767772006.461099
+  },
+  {
+    "simulation_id": "sim_1767772006",
+    "day": 1,
+    "event_type": "OFFER_MADE",
+    "agent_id": "L1_Agent_1",
+    "details": {
+      "session_id": "L0_Agent_0-L1_Agent_1-1",
+      "step": 6,
+      "role": "buyer",
+      "price": 16,
+      "quantity": 10
+    },
+    "timestamp": 1767772006.461102
+  },
+  {
+    "simulation_id": "sim_1767772006",
+    "day": 1,
+    "event_type": "OFFER_MADE",
+    "agent_id": "L0_Agent_0",
+    "details": {
+      "session_id": "L0_Agent_0-L1_Agent_1-1",
+      "step": 7,
+      "role": "seller",
+      "price": 19,
+      "quantity": 10
+    },
+    "timestamp": 1767772006.4611042
+  },
+  {
+    "simulation_id": "sim_1767772006",
+    "day": 1,
+    "event_type": "CONTRACT_SIGNED",
+    "agent_id": "L1_Agent_1",
+    "details": {
+      "session_id": "L0_Agent_0-L1_Agent_1-1",
+      "step": 7,
+      "final_price": 19,
+      "final_quantity": 10
+    },
+    "timestamp": 1767772006.4611058
+  },
+  {
+    "simulation_id": "sim_1767772006",
+    "day": 1,
+    "event_type": "CONTRACT_SIGNED",
+    "agent_id": "SYSTEM",
+    "details": {
+      "seller": "L0_Agent_0",
+      "buyer": "L1_Agent_1",
+      "product": 1,
+      "quantity": 10,
+      "price": 19
+    },
+    "timestamp": 1767772006.461107
+  },
+  {
+    "simulation_id": "sim_1767772006",
+    "day": 1,
+    "event_type": "NEGOTIATION_START",
+    "agent_id": "SYSTEM",
+    "details": {
+      "session_id": "L0_Agent_0-L1_Agent_2-1",
+      "seller": "L0_Agent_0",
+      "buyer": "L1_Agent_2",
+      "product": 1,
+      "seller_reservation": 17,
+      "buyer_reservation": 19
+    },
+    "timestamp": 1767772006.46111
+  },
+  {
+    "simulation_id": "sim_1767772006",
+    "day": 1,
+    "event_type": "OFFER_MADE",
+    "agent_id": "L0_Agent_0",
+    "details": {
+      "session_id": "L0_Agent_0-L1_Agent_2-1",
+      "step": 0,
+      "role": "seller",
+      "price": 21,
+      "quantity": 10
+    },
+    "timestamp": 1767772006.461112
+  },
+  {
+    "simulation_id": "sim_1767772006",
+    "day": 1,
+    "event_type": "OFFER_MADE",
+    "agent_id": "L1_Agent_2",
+    "details": {
+      "session_id": "L0_Agent_0-L1_Agent_2-1",
+      "step": 1,
+      "role": "buyer",
+      "price": 16,
+      "quantity": 10
+    },
+    "timestamp": 1767772006.461115
+  },
+  {
+    "simulation_id": "sim_1767772006",
+    "day": 1,
+    "event_type": "OFFER_MADE",
+    "agent_id": "L0_Agent_0",
+    "details": {
+      "session_id": "L0_Agent_0-L1_Agent_2-1",
+      "step": 2,
+      "role": "seller",
+      "price": 20,
+      "quantity": 10
+    },
+    "timestamp": 1767772006.461117
+  },
+  {
+    "simulation_id": "sim_1767772006",
+    "day": 1,
+    "event_type": "OFFER_MADE",
+    "agent_id": "L1_Agent_2",
+    "details": {
+      "session_id": "L0_Agent_0-L1_Agent_2-1",
+      "step": 3,
+      "role": "buyer",
+      "price": 16,
+      "quantity": 10
+    },
+    "timestamp": 1767772006.46112
+  },
+  {
+    "simulation_id": "sim_1767772006",
+    "day": 1,
+    "event_type": "OFFER_MADE",
+    "agent_id": "L0_Agent_0",
+    "details": {
+      "session_id": "L0_Agent_0-L1_Agent_2-1",
+      "step": 4,
+      "role": "seller",
+      "price": 20,
+      "quantity": 10
+    },
+    "timestamp": 1767772006.461122
+  },
+  {
+    "simulation_id": "sim_1767772006",
+    "day": 1,
+    "event_type": "OFFER_MADE",
+    "agent_id": "L1_Agent_2",
+    "details": {
+      "session_id": "L0_Agent_0-L1_Agent_2-1",
+      "step": 5,
+      "role": "buyer",
+      "price": 16,
+      "quantity": 10
+    },
+    "timestamp": 1767772006.4611251
+  },
+  {
+    "simulation_id": "sim_1767772006",
+    "day": 1,
+    "event_type": "OFFER_MADE",
+    "agent_id": "L0_Agent_0",
+    "details": {
+      "session_id": "L0_Agent_0-L1_Agent_2-1",
+      "step": 6,
+      "role": "seller",
+      "price": 19,
+      "quantity": 10
+    },
+    "timestamp": 1767772006.461128
+  },
+  {
+    "simulation_id": "sim_1767772006",
+    "day": 1,
+    "event_type": "CONTRACT_SIGNED",
+    "agent_id": "L1_Agent_2",
+    "details": {
+      "session_id": "L0_Agent_0-L1_Agent_2-1",
+      "step": 6,
+      "final_price": 19,
+      "final_quantity": 10
+    },
+    "timestamp": 1767772006.461129
+  },
+  {
+    "simulation_id": "sim_1767772006",
+    "day": 1,
+    "event_type": "CONTRACT_SIGNED",
+    "agent_id": "SYSTEM",
+    "details": {
+      "seller": "L0_Agent_0",
+      "buyer": "L1_Agent_2",
+      "product": 1,
+      "quantity": 10,
+      "price": 19
+    },
+    "timestamp": 1767772006.46113
+  },
+  {
+    "simulation_id": "sim_1767772006",
+    "day": 1,
+    "event_type": "NEGOTIATION_START",
+    "agent_id": "SYSTEM",
+    "details": {
+      "session_id": "L0_Agent_1-L1_Agent_0-1",
+      "seller": "L0_Agent_1",
+      "buyer": "L1_Agent_0",
+      "product": 1,
+      "seller_reservation": 17,
+      "buyer_reservation": 19
+    },
+    "timestamp": 1767772006.461133
+  },
+  {
+    "simulation_id": "sim_1767772006",
+    "day": 1,
+    "event_type": "OFFER_MADE",
+    "agent_id": "L0_Agent_1",
+    "details": {
+      "session_id": "L0_Agent_1-L1_Agent_0-1",
+      "step": 0,
+      "role": "seller",
+      "price": 21,
+      "quantity": 10
+    },
+    "timestamp": 1767772006.4611351
+  },
+  {
+    "simulation_id": "sim_1767772006",
+    "day": 1,
+    "event_type": "OFFER_MADE",
+    "agent_id": "L1_Agent_0",
+    "details": {
+      "session_id": "L0_Agent_1-L1_Agent_0-1",
+      "step": 1,
+      "role": "buyer",
+      "price": 16,
+      "quantity": 10
+    },
+    "timestamp": 1767772006.461138
+  },
+  {
+    "simulation_id": "sim_1767772006",
+    "day": 1,
+    "event_type": "OFFER_MADE",
+    "agent_id": "L0_Agent_1",
+    "details": {
+      "session_id": "L0_Agent_1-L1_Agent_0-1",
+      "step": 2,
+      "role": "seller",
+      "price": 20,
+      "quantity": 10
+    },
+    "timestamp": 1767772006.46114
+  },
+  {
+    "simulation_id": "sim_1767772006",
+    "day": 1,
+    "event_type": "OFFER_MADE",
+    "agent_id": "L1_Agent_0",
+    "details": {
+      "session_id": "L0_Agent_1-L1_Agent_0-1",
+      "step": 3,
+      "role": "buyer",
+      "price": 16,
+      "quantity": 10
+    },
+    "timestamp": 1767772006.461143
+  },
+  {
+    "simulation_id": "sim_1767772006",
+    "day": 1,
+    "event_type": "OFFER_MADE",
+    "agent_id": "L0_Agent_1",
+    "details": {
+      "session_id": "L0_Agent_1-L1_Agent_0-1",
+      "step": 4,
+      "role": "seller",
+      "price": 20,
+      "quantity": 10
+    },
+    "timestamp": 1767772006.461146
+  },
+  {
+    "simulation_id": "sim_1767772006",
+    "day": 1,
+    "event_type": "OFFER_MADE",
+    "agent_id": "L1_Agent_0",
+    "details": {
+      "session_id": "L0_Agent_1-L1_Agent_0-1",
+      "step": 5,
+      "role": "buyer",
+      "price": 16,
+      "quantity": 10
+    },
+    "timestamp": 1767772006.4611478
+  },
+  {
+    "simulation_id": "sim_1767772006",
+    "day": 1,
+    "event_type": "OFFER_MADE",
+    "agent_id": "L0_Agent_1",
+    "details": {
+      "session_id": "L0_Agent_1-L1_Agent_0-1",
+      "step": 6,
+      "role": "seller",
+      "price": 19,
+      "quantity": 10
+    },
+    "timestamp": 1767772006.461151
+  },
+  {
+    "simulation_id": "sim_1767772006",
+    "day": 1,
+    "event_type": "CONTRACT_SIGNED",
+    "agent_id": "L1_Agent_0",
+    "details": {
+      "session_id": "L0_Agent_1-L1_Agent_0-1",
+      "step": 6,
+      "final_price": 19,
+      "final_quantity": 10
+    },
+    "timestamp": 1767772006.461152
+  },
+  {
+    "simulation_id": "sim_1767772006",
+    "day": 1,
+    "event_type": "CONTRACT_SIGNED",
+    "agent_id": "SYSTEM",
+    "details": {
+      "seller": "L0_Agent_1",
+      "buyer": "L1_Agent_0",
+      "product": 1,
+      "quantity": 10,
+      "price": 19
+    },
+    "timestamp": 1767772006.461153
+  },
+  {
+    "simulation_id": "sim_1767772006",
+    "day": 1,
+    "event_type": "NEGOTIATION_START",
+    "agent_id": "SYSTEM",
+    "details": {
+      "session_id": "L0_Agent_1-L1_Agent_1-1",
+      "seller": "L0_Agent_1",
+      "buyer": "L1_Agent_1",
+      "product": 1,
+      "seller_reservation": 17,
+      "buyer_reservation": 20
+    },
+    "timestamp": 1767772006.4611561
+  },
+  {
+    "simulation_id": "sim_1767772006",
+    "day": 1,
+    "event_type": "OFFER_MADE",
+    "agent_id": "L1_Agent_1",
+    "details": {
+      "session_id": "L0_Agent_1-L1_Agent_1-1",
+      "step": 0,
+      "role": "buyer",
+      "price": 16,
+      "quantity": 10
+    },
+    "timestamp": 1767772006.4611578
+  },
+  {
+    "simulation_id": "sim_1767772006",
+    "day": 1,
+    "event_type": "OFFER_MADE",
+    "agent_id": "L0_Agent_1",
+    "details": {
+      "session_id": "L0_Agent_1-L1_Agent_1-1",
+      "step": 1,
+      "role": "seller",
+      "price": 20,
+      "quantity": 10
+    },
+    "timestamp": 1767772006.46116
+  },
+  {
+    "simulation_id": "sim_1767772006",
+    "day": 1,
+    "event_type": "CONTRACT_SIGNED",
+    "agent_id": "L1_Agent_1",
+    "details": {
+      "session_id": "L0_Agent_1-L1_Agent_1-1",
+      "step": 1,
+      "final_price": 20,
+      "final_quantity": 10
+    },
+    "timestamp": 1767772006.461162
+  },
+  {
+    "simulation_id": "sim_1767772006",
+    "day": 1,
+    "event_type": "CONTRACT_SIGNED",
+    "agent_id": "SYSTEM",
+    "details": {
+      "seller": "L0_Agent_1",
+      "buyer": "L1_Agent_1",
+      "product": 1,
+      "quantity": 10,
+      "price": 20
+    },
+    "timestamp": 1767772006.461163
+  },
+  {
+    "simulation_id": "sim_1767772006",
+    "day": 1,
+    "event_type": "NEGOTIATION_START",
+    "agent_id": "SYSTEM",
+    "details": {
+      "session_id": "L0_Agent_1-L1_Agent_2-1",
+      "seller": "L0_Agent_1",
+      "buyer": "L1_Agent_2",
+      "product": 1,
+      "seller_reservation": 17,
+      "buyer_reservation": 19
+    },
+    "timestamp": 1767772006.461165
+  },
+  {
+    "simulation_id": "sim_1767772006",
+    "day": 1,
+    "event_type": "OFFER_MADE",
+    "agent_id": "L0_Agent_1",
+    "details": {
+      "session_id": "L0_Agent_1-L1_Agent_2-1",
+      "step": 0,
+      "role": "seller",
+      "price": 21,
+      "quantity": 10
+    },
+    "timestamp": 1767772006.461168
+  },
+  {
+    "simulation_id": "sim_1767772006",
+    "day": 1,
+    "event_type": "OFFER_MADE",
+    "agent_id": "L1_Agent_2",
+    "details": {
+      "session_id": "L0_Agent_1-L1_Agent_2-1",
+      "step": 1,
+      "role": "buyer",
+      "price": 16,
+      "quantity": 10
+    },
+    "timestamp": 1767772006.46117
+  },
+  {
+    "simulation_id": "sim_1767772006",
+    "day": 1,
+    "event_type": "OFFER_MADE",
+    "agent_id": "L0_Agent_1",
+    "details": {
+      "session_id": "L0_Agent_1-L1_Agent_2-1",
+      "step": 2,
+      "role": "seller",
+      "price": 20,
+      "quantity": 10
+    },
+    "timestamp": 1767772006.461173
+  },
+  {
+    "simulation_id": "sim_1767772006",
+    "day": 1,
+    "event_type": "OFFER_MADE",
+    "agent_id": "L1_Agent_2",
+    "details": {
+      "session_id": "L0_Agent_1-L1_Agent_2-1",
+      "step": 3,
+      "role": "buyer",
+      "price": 16,
+      "quantity": 10
+    },
+    "timestamp": 1767772006.4611762
+  },
+  {
+    "simulation_id": "sim_1767772006",
+    "day": 1,
+    "event_type": "OFFER_MADE",
+    "agent_id": "L0_Agent_1",
+    "details": {
+      "session_id": "L0_Agent_1-L1_Agent_2-1",
+      "step": 4,
+      "role": "seller",
+      "price": 20,
+      "quantity": 10
+    },
+    "timestamp": 1767772006.461178
+  },
+  {
+    "simulation_id": "sim_1767772006",
+    "day": 1,
+    "event_type": "OFFER_MADE",
+    "agent_id": "L1_Agent_2",
+    "details": {
+      "session_id": "L0_Agent_1-L1_Agent_2-1",
+      "step": 5,
+      "role": "buyer",
+      "price": 16,
+      "quantity": 10
+    },
+    "timestamp": 1767772006.461181
+  },
+  {
+    "simulation_id": "sim_1767772006",
+    "day": 1,
+    "event_type": "OFFER_MADE",
+    "agent_id": "L0_Agent_1",
+    "details": {
+      "session_id": "L0_Agent_1-L1_Agent_2-1",
+      "step": 6,
+      "role": "seller",
+      "price": 19,
+      "quantity": 10
+    },
+    "timestamp": 1767772006.461184
+  },
+  {
+    "simulation_id": "sim_1767772006",
+    "day": 1,
+    "event_type": "CONTRACT_SIGNED",
+    "agent_id": "L1_Agent_2",
+    "details": {
+      "session_id": "L0_Agent_1-L1_Agent_2-1",
+      "step": 6,
+      "final_price": 19,
+      "final_quantity": 10
+    },
+    "timestamp": 1767772006.461185
+  },
+  {
+    "simulation_id": "sim_1767772006",
+    "day": 1,
+    "event_type": "CONTRACT_SIGNED",
+    "agent_id": "SYSTEM",
+    "details": {
+      "seller": "L0_Agent_1",
+      "buyer": "L1_Agent_2",
+      "product": 1,
+      "quantity": 10,
+      "price": 19
+    },
+    "timestamp": 1767772006.461186
+  },
+  {
+    "simulation_id": "sim_1767772006",
+    "day": 1,
+    "event_type": "NEGOTIATION_START",
+    "agent_id": "SYSTEM",
+    "details": {
+      "session_id": "L0_Agent_2-L1_Agent_0-1",
+      "seller": "L0_Agent_2",
+      "buyer": "L1_Agent_0",
+      "product": 1,
+      "seller_reservation": 17,
+      "buyer_reservation": 20
+    },
+    "timestamp": 1767772006.461188
+  },
+  {
+    "simulation_id": "sim_1767772006",
+    "day": 1,
+    "event_type": "OFFER_MADE",
+    "agent_id": "L0_Agent_2",
+    "details": {
+      "session_id": "L0_Agent_2-L1_Agent_0-1",
+      "step": 0,
+      "role": "seller",
+      "price": 21,
+      "quantity": 10
+    },
+    "timestamp": 1767772006.461191
+  },
+  {
+    "simulation_id": "sim_1767772006",
+    "day": 1,
+    "event_type": "OFFER_MADE",
+    "agent_id": "L1_Agent_0",
+    "details": {
+      "session_id": "L0_Agent_2-L1_Agent_0-1",
+      "step": 1,
+      "role": "buyer",
+      "price": 16,
+      "quantity": 10
+    },
+    "timestamp": 1767772006.4611928
+  },
+  {
+    "simulation_id": "sim_1767772006",
+    "day": 1,
+    "event_type": "OFFER_MADE",
+    "agent_id": "L0_Agent_2",
+    "details": {
+      "session_id": "L0_Agent_2-L1_Agent_0-1",
+      "step": 2,
+      "role": "seller",
+      "price": 20,
+      "quantity": 10
+    },
+    "timestamp": 1767772006.461196
+  },
+  {
+    "simulation_id": "sim_1767772006",
+    "day": 1,
+    "event_type": "CONTRACT_SIGNED",
+    "agent_id": "L1_Agent_0",
+    "details": {
+      "session_id": "L0_Agent_2-L1_Agent_0-1",
+      "step": 2,
+      "final_price": 20,
+      "final_quantity": 10
+    },
+    "timestamp": 1767772006.4611971
+  },
+  {
+    "simulation_id": "sim_1767772006",
+    "day": 1,
+    "event_type": "CONTRACT_SIGNED",
+    "agent_id": "SYSTEM",
+    "details": {
+      "seller": "L0_Agent_2",
+      "buyer": "L1_Agent_0",
+      "product": 1,
+      "quantity": 10,
+      "price": 20
+    },
+    "timestamp": 1767772006.461198
+  },
+  {
+    "simulation_id": "sim_1767772006",
+    "day": 1,
+    "event_type": "NEGOTIATION_START",
+    "agent_id": "SYSTEM",
+    "details": {
+      "session_id": "L0_Agent_2-L1_Agent_1-1",
+      "seller": "L0_Agent_2",
+      "buyer": "L1_Agent_1",
+      "product": 1,
+      "seller_reservation": 17,
+      "buyer_reservation": 20
+    },
+    "timestamp": 1767772006.4611998
+  },
+  {
+    "simulation_id": "sim_1767772006",
+    "day": 1,
+    "event_type": "OFFER_MADE",
+    "agent_id": "L1_Agent_1",
+    "details": {
+      "session_id": "L0_Agent_2-L1_Agent_1-1",
+      "step": 0,
+      "role": "buyer",
+      "price": 16,
+      "quantity": 10
+    },
+    "timestamp": 1767772006.4612029
+  },
+  {
+    "simulation_id": "sim_1767772006",
+    "day": 1,
+    "event_type": "OFFER_MADE",
+    "agent_id": "L0_Agent_2",
+    "details": {
+      "session_id": "L0_Agent_2-L1_Agent_1-1",
+      "step": 1,
+      "role": "seller",
+      "price": 20,
+      "quantity": 10
+    },
+    "timestamp": 1767772006.461205
+  },
+  {
+    "simulation_id": "sim_1767772006",
+    "day": 1,
+    "event_type": "CONTRACT_SIGNED",
+    "agent_id": "L1_Agent_1",
+    "details": {
+      "session_id": "L0_Agent_2-L1_Agent_1-1",
+      "step": 1,
+      "final_price": 20,
+      "final_quantity": 10
+    },
+    "timestamp": 1767772006.4612072
+  },
+  {
+    "simulation_id": "sim_1767772006",
+    "day": 1,
+    "event_type": "CONTRACT_SIGNED",
+    "agent_id": "SYSTEM",
+    "details": {
+      "seller": "L0_Agent_2",
+      "buyer": "L1_Agent_1",
+      "product": 1,
+      "quantity": 10,
+      "price": 20
+    },
+    "timestamp": 1767772006.461208
+  },
+  {
+    "simulation_id": "sim_1767772006",
+    "day": 1,
+    "event_type": "NEGOTIATION_START",
+    "agent_id": "SYSTEM",
+    "details": {
+      "session_id": "L0_Agent_2-L1_Agent_2-1",
+      "seller": "L0_Agent_2",
+      "buyer": "L1_Agent_2",
+      "product": 1,
+      "seller_reservation": 16,
+      "buyer_reservation": 20
+    },
+    "timestamp": 1767772006.46121
+  },
+  {
+    "simulation_id": "sim_1767772006",
+    "day": 1,
+    "event_type": "OFFER_MADE",
+    "agent_id": "L0_Agent_2",
+    "details": {
+      "session_id": "L0_Agent_2-L1_Agent_2-1",
+      "step": 0,
+      "role": "seller",
+      "price": 21,
+      "quantity": 10
+    },
+    "timestamp": 1767772006.461212
+  },
+  {
+    "simulation_id": "sim_1767772006",
+    "day": 1,
+    "event_type": "OFFER_MADE",
+    "agent_id": "L1_Agent_2",
+    "details": {
+      "session_id": "L0_Agent_2-L1_Agent_2-1",
+      "step": 1,
+      "role": "buyer",
+      "price": 16,
+      "quantity": 10
+    },
+    "timestamp": 1767772006.461215
+  },
+  {
+    "simulation_id": "sim_1767772006",
+    "day": 1,
+    "event_type": "CONTRACT_SIGNED",
+    "agent_id": "L0_Agent_2",
+    "details": {
+      "session_id": "L0_Agent_2-L1_Agent_2-1",
+      "step": 1,
+      "final_price": 16,
+      "final_quantity": 10
+    },
+    "timestamp": 1767772006.461216
+  },
+  {
+    "simulation_id": "sim_1767772006",
+    "day": 1,
+    "event_type": "CONTRACT_SIGNED",
+    "agent_id": "SYSTEM",
+    "details": {
+      "seller": "L0_Agent_2",
+      "buyer": "L1_Agent_2",
+      "product": 1,
+      "quantity": 10,
+      "price": 16
+    },
+    "timestamp": 1767772006.461217
+  },
+  {
+    "simulation_id": "sim_1767772006",
+    "day": 2,
+    "event_type": "MARKET_UPDATE",
+    "agent_id": "SYSTEM",
+    "details": {
+      "product_id": 0,
+      "trading_price": 10.0,
+      "catalog_price": 10
+    },
+    "timestamp": 1767772006.46128
+  },
+  {
+    "simulation_id": "sim_1767772006",
+    "day": 2,
+    "event_type": "MARKET_UPDATE",
+    "agent_id": "SYSTEM",
+    "details": {
+      "product_id": 1,
+      "trading_price": 18.694444444444443,
+      "catalog_price": 20
+    },
+    "timestamp": 1767772006.461281
+  },
+  {
+    "simulation_id": "sim_1767772006",
+    "day": 2,
+    "event_type": "MARKET_UPDATE",
+    "agent_id": "SYSTEM",
+    "details": {
+      "product_id": 2,
+      "trading_price": 30.0,
+      "catalog_price": 30
+    },
+    "timestamp": 1767772006.461282
+  },
+  {
+    "simulation_id": "sim_1767772006",
+    "day": 2,
+    "event_type": "NEGOTIATION_START",
+    "agent_id": "SYSTEM",
+    "details": {
+      "session_id": "L0_Agent_0-L1_Agent_0-2",
+      "seller": "L0_Agent_0",
+      "buyer": "L1_Agent_0",
+      "product": 1,
+      "seller_reservation": 17,
+      "buyer_reservation": 19
+    },
+    "timestamp": 1767772006.461299
+  },
+  {
+    "simulation_id": "sim_1767772006",
+    "day": 2,
+    "event_type": "OFFER_MADE",
+    "agent_id": "L0_Agent_0",
+    "details": {
+      "session_id": "L0_Agent_0-L1_Agent_0-2",
+      "step": 0,
+      "role": "seller",
+      "price": 21,
+      "quantity": 10
+    },
+    "timestamp": 1767772006.461301
+  },
+  {
+    "simulation_id": "sim_1767772006",
+    "day": 2,
+    "event_type": "OFFER_MADE",
+    "agent_id": "L1_Agent_0",
+    "details": {
+      "session_id": "L0_Agent_0-L1_Agent_0-2",
+      "step": 1,
+      "role": "buyer",
+      "price": 16,
+      "quantity": 10
+    },
+    "timestamp": 1767772006.461304
+  },
+  {
+    "simulation_id": "sim_1767772006",
+    "day": 2,
+    "event_type": "OFFER_MADE",
+    "agent_id": "L0_Agent_0",
+    "details": {
+      "session_id": "L0_Agent_0-L1_Agent_0-2",
+      "step": 2,
+      "role": "seller",
+      "price": 20,
+      "quantity": 10
+    },
+    "timestamp": 1767772006.461306
+  },
+  {
+    "simulation_id": "sim_1767772006",
+    "day": 2,
+    "event_type": "OFFER_MADE",
+    "agent_id": "L1_Agent_0",
+    "details": {
+      "session_id": "L0_Agent_0-L1_Agent_0-2",
+      "step": 3,
+      "role": "buyer",
+      "price": 16,
+      "quantity": 10
+    },
+    "timestamp": 1767772006.461309
+  },
+  {
+    "simulation_id": "sim_1767772006",
+    "day": 2,
+    "event_type": "OFFER_MADE",
+    "agent_id": "L0_Agent_0",
+    "details": {
+      "session_id": "L0_Agent_0-L1_Agent_0-2",
+      "step": 4,
+      "role": "seller",
+      "price": 20,
+      "quantity": 10
+    },
+    "timestamp": 1767772006.461312
+  },
+  {
+    "simulation_id": "sim_1767772006",
+    "day": 2,
+    "event_type": "OFFER_MADE",
+    "agent_id": "L1_Agent_0",
+    "details": {
+      "session_id": "L0_Agent_0-L1_Agent_0-2",
+      "step": 5,
+      "role": "buyer",
+      "price": 16,
+      "quantity": 10
+    },
+    "timestamp": 1767772006.461314
+  },
+  {
+    "simulation_id": "sim_1767772006",
+    "day": 2,
+    "event_type": "OFFER_MADE",
+    "agent_id": "L0_Agent_0",
+    "details": {
+      "session_id": "L0_Agent_0-L1_Agent_0-2",
+      "step": 6,
+      "role": "seller",
+      "price": 19,
+      "quantity": 10
+    },
+    "timestamp": 1767772006.461317
+  },
+  {
+    "simulation_id": "sim_1767772006",
+    "day": 2,
+    "event_type": "CONTRACT_SIGNED",
+    "agent_id": "L1_Agent_0",
+    "details": {
+      "session_id": "L0_Agent_0-L1_Agent_0-2",
+      "step": 6,
+      "final_price": 19,
+      "final_quantity": 10
+    },
+    "timestamp": 1767772006.4613178
+  },
+  {
+    "simulation_id": "sim_1767772006",
+    "day": 2,
+    "event_type": "CONTRACT_SIGNED",
+    "agent_id": "SYSTEM",
+    "details": {
+      "seller": "L0_Agent_0",
+      "buyer": "L1_Agent_0",
+      "product": 1,
+      "quantity": 10,
+      "price": 19
+    },
+    "timestamp": 1767772006.461319
+  },
+  {
+    "simulation_id": "sim_1767772006",
+    "day": 2,
+    "event_type": "NEGOTIATION_START",
+    "agent_id": "SYSTEM",
+    "details": {
+      "session_id": "L0_Agent_0-L1_Agent_1-2",
+      "seller": "L0_Agent_0",
+      "buyer": "L1_Agent_1",
+      "product": 1,
+      "seller_reservation": 17,
+      "buyer_reservation": 20
+    },
+    "timestamp": 1767772006.461323
+  },
+  {
+    "simulation_id": "sim_1767772006",
+    "day": 2,
+    "event_type": "OFFER_MADE",
+    "agent_id": "L0_Agent_0",
+    "details": {
+      "session_id": "L0_Agent_0-L1_Agent_1-2",
+      "step": 0,
+      "role": "seller",
+      "price": 21,
+      "quantity": 10
+    },
+    "timestamp": 1767772006.4613252
+  },
+  {
+    "simulation_id": "sim_1767772006",
+    "day": 2,
+    "event_type": "OFFER_MADE",
+    "agent_id": "L1_Agent_1",
+    "details": {
+      "session_id": "L0_Agent_0-L1_Agent_1-2",
+      "step": 1,
+      "role": "buyer",
+      "price": 16,
+      "quantity": 10
+    },
+    "timestamp": 1767772006.4613278
+  },
+  {
+    "simulation_id": "sim_1767772006",
+    "day": 2,
+    "event_type": "OFFER_MADE",
+    "agent_id": "L0_Agent_0",
+    "details": {
+      "session_id": "L0_Agent_0-L1_Agent_1-2",
+      "step": 2,
+      "role": "seller",
+      "price": 20,
+      "quantity": 10
+    },
+    "timestamp": 1767772006.46133
+  },
+  {
+    "simulation_id": "sim_1767772006",
+    "day": 2,
+    "event_type": "CONTRACT_SIGNED",
+    "agent_id": "L1_Agent_1",
+    "details": {
+      "session_id": "L0_Agent_0-L1_Agent_1-2",
+      "step": 2,
+      "final_price": 20,
+      "final_quantity": 10
+    },
+    "timestamp": 1767772006.461332
+  },
+  {
+    "simulation_id": "sim_1767772006",
+    "day": 2,
+    "event_type": "CONTRACT_SIGNED",
+    "agent_id": "SYSTEM",
+    "details": {
+      "seller": "L0_Agent_0",
+      "buyer": "L1_Agent_1",
+      "product": 1,
+      "quantity": 10,
+      "price": 20
+    },
+    "timestamp": 1767772006.461332
+  },
+  {
+    "simulation_id": "sim_1767772006",
+    "day": 2,
+    "event_type": "NEGOTIATION_START",
+    "agent_id": "SYSTEM",
+    "details": {
+      "session_id": "L0_Agent_0-L1_Agent_2-2",
+      "seller": "L0_Agent_0",
+      "buyer": "L1_Agent_2",
+      "product": 1,
+      "seller_reservation": 17,
+      "buyer_reservation": 20
+    },
+    "timestamp": 1767772006.461335
+  },
+  {
+    "simulation_id": "sim_1767772006",
+    "day": 2,
+    "event_type": "OFFER_MADE",
+    "agent_id": "L1_Agent_2",
+    "details": {
+      "session_id": "L0_Agent_0-L1_Agent_2-2",
+      "step": 0,
+      "role": "buyer",
+      "price": 16,
+      "quantity": 10
+    },
+    "timestamp": 1767772006.461337
+  },
+  {
+    "simulation_id": "sim_1767772006",
+    "day": 2,
+    "event_type": "OFFER_MADE",
+    "agent_id": "L0_Agent_0",
+    "details": {
+      "session_id": "L0_Agent_0-L1_Agent_2-2",
+      "step": 1,
+      "role": "seller",
+      "price": 20,
+      "quantity": 10
+    },
+    "timestamp": 1767772006.461339
+  },
+  {
+    "simulation_id": "sim_1767772006",
+    "day": 2,
+    "event_type": "CONTRACT_SIGNED",
+    "agent_id": "L1_Agent_2",
+    "details": {
+      "session_id": "L0_Agent_0-L1_Agent_2-2",
+      "step": 1,
+      "final_price": 20,
+      "final_quantity": 10
+    },
+    "timestamp": 1767772006.461341
+  },
+  {
+    "simulation_id": "sim_1767772006",
+    "day": 2,
+    "event_type": "CONTRACT_SIGNED",
+    "agent_id": "SYSTEM",
+    "details": {
+      "seller": "L0_Agent_0",
+      "buyer": "L1_Agent_2",
+      "product": 1,
+      "quantity": 10,
+      "price": 20
+    },
+    "timestamp": 1767772006.4613419
+  },
+  {
+    "simulation_id": "sim_1767772006",
+    "day": 2,
+    "event_type": "NEGOTIATION_START",
+    "agent_id": "SYSTEM",
+    "details": {
+      "session_id": "L0_Agent_1-L1_Agent_0-2",
+      "seller": "L0_Agent_1",
+      "buyer": "L1_Agent_0",
+      "product": 1,
+      "seller_reservation": 17,
+      "buyer_reservation": 19
+    },
+    "timestamp": 1767772006.461344
+  },
+  {
+    "simulation_id": "sim_1767772006",
+    "day": 2,
+    "event_type": "OFFER_MADE",
+    "agent_id": "L0_Agent_1",
+    "details": {
+      "session_id": "L0_Agent_1-L1_Agent_0-2",
+      "step": 0,
+      "role": "seller",
+      "price": 21,
+      "quantity": 10
+    },
+    "timestamp": 1767772006.4613461
+  },
+  {
+    "simulation_id": "sim_1767772006",
+    "day": 2,
+    "event_type": "OFFER_MADE",
+    "agent_id": "L1_Agent_0",
+    "details": {
+      "session_id": "L0_Agent_1-L1_Agent_0-2",
+      "step": 1,
+      "role": "buyer",
+      "price": 16,
+      "quantity": 10
+    },
+    "timestamp": 1767772006.461349
+  },
+  {
+    "simulation_id": "sim_1767772006",
+    "day": 2,
+    "event_type": "OFFER_MADE",
+    "agent_id": "L0_Agent_1",
+    "details": {
+      "session_id": "L0_Agent_1-L1_Agent_0-2",
+      "step": 2,
+      "role": "seller",
+      "price": 20,
+      "quantity": 10
+    },
+    "timestamp": 1767772006.4614
+  },
+  {
+    "simulation_id": "sim_1767772006",
+    "day": 2,
+    "event_type": "OFFER_MADE",
+    "agent_id": "L1_Agent_0",
+    "details": {
+      "session_id": "L0_Agent_1-L1_Agent_0-2",
+      "step": 3,
+      "role": "buyer",
+      "price": 16,
+      "quantity": 10
+    },
+    "timestamp": 1767772006.4614022
+  },
+  {
+    "simulation_id": "sim_1767772006",
+    "day": 2,
+    "event_type": "OFFER_MADE",
+    "agent_id": "L0_Agent_1",
+    "details": {
+      "session_id": "L0_Agent_1-L1_Agent_0-2",
+      "step": 4,
+      "role": "seller",
+      "price": 20,
+      "quantity": 10
+    },
+    "timestamp": 1767772006.461405
+  },
+  {
+    "simulation_id": "sim_1767772006",
+    "day": 2,
+    "event_type": "OFFER_MADE",
+    "agent_id": "L1_Agent_0",
+    "details": {
+      "session_id": "L0_Agent_1-L1_Agent_0-2",
+      "step": 5,
+      "role": "buyer",
+      "price": 16,
+      "quantity": 10
+    },
+    "timestamp": 1767772006.461407
+  },
+  {
+    "simulation_id": "sim_1767772006",
+    "day": 2,
+    "event_type": "OFFER_MADE",
+    "agent_id": "L0_Agent_1",
+    "details": {
+      "session_id": "L0_Agent_1-L1_Agent_0-2",
+      "step": 6,
+      "role": "seller",
+      "price": 19,
+      "quantity": 10
+    },
+    "timestamp": 1767772006.46141
+  },
+  {
+    "simulation_id": "sim_1767772006",
+    "day": 2,
+    "event_type": "CONTRACT_SIGNED",
+    "agent_id": "L1_Agent_0",
+    "details": {
+      "session_id": "L0_Agent_1-L1_Agent_0-2",
+      "step": 6,
+      "final_price": 19,
+      "final_quantity": 10
+    },
+    "timestamp": 1767772006.461411
+  },
+  {
+    "simulation_id": "sim_1767772006",
+    "day": 2,
+    "event_type": "CONTRACT_SIGNED",
+    "agent_id": "SYSTEM",
+    "details": {
+      "seller": "L0_Agent_1",
+      "buyer": "L1_Agent_0",
+      "product": 1,
+      "quantity": 10,
+      "price": 19
+    },
+    "timestamp": 1767772006.4614122
+  },
+  {
+    "simulation_id": "sim_1767772006",
+    "day": 2,
+    "event_type": "NEGOTIATION_START",
+    "agent_id": "SYSTEM",
+    "details": {
+      "session_id": "L0_Agent_1-L1_Agent_1-2",
+      "seller": "L0_Agent_1",
+      "buyer": "L1_Agent_1",
+      "product": 1,
+      "seller_reservation": 17,
+      "buyer_reservation": 20
+    },
+    "timestamp": 1767772006.4614148
+  },
+  {
+    "simulation_id": "sim_1767772006",
+    "day": 2,
+    "event_type": "OFFER_MADE",
+    "agent_id": "L1_Agent_1",
+    "details": {
+      "session_id": "L0_Agent_1-L1_Agent_1-2",
+      "step": 0,
+      "role": "buyer",
+      "price": 16,
+      "quantity": 10
+    },
+    "timestamp": 1767772006.461417
+  },
+  {
+    "simulation_id": "sim_1767772006",
+    "day": 2,
+    "event_type": "OFFER_MADE",
+    "agent_id": "L0_Agent_1",
+    "details": {
+      "session_id": "L0_Agent_1-L1_Agent_1-2",
+      "step": 1,
+      "role": "seller",
+      "price": 20,
+      "quantity": 10
+    },
+    "timestamp": 1767772006.461419
+  },
+  {
+    "simulation_id": "sim_1767772006",
+    "day": 2,
+    "event_type": "CONTRACT_SIGNED",
+    "agent_id": "L1_Agent_1",
+    "details": {
+      "session_id": "L0_Agent_1-L1_Agent_1-2",
+      "step": 1,
+      "final_price": 20,
+      "final_quantity": 10
+    },
+    "timestamp": 1767772006.461421
+  },
+  {
+    "simulation_id": "sim_1767772006",
+    "day": 2,
+    "event_type": "CONTRACT_SIGNED",
+    "agent_id": "SYSTEM",
+    "details": {
+      "seller": "L0_Agent_1",
+      "buyer": "L1_Agent_1",
+      "product": 1,
+      "quantity": 10,
+      "price": 20
+    },
+    "timestamp": 1767772006.461421
+  },
+  {
+    "simulation_id": "sim_1767772006",
+    "day": 2,
+    "event_type": "NEGOTIATION_START",
+    "agent_id": "SYSTEM",
+    "details": {
+      "session_id": "L0_Agent_1-L1_Agent_2-2",
+      "seller": "L0_Agent_1",
+      "buyer": "L1_Agent_2",
+      "product": 1,
+      "seller_reservation": 16,
+      "buyer_reservation": 20
+    },
+    "timestamp": 1767772006.461424
+  },
+  {
+    "simulation_id": "sim_1767772006",
+    "day": 2,
+    "event_type": "OFFER_MADE",
+    "agent_id": "L0_Agent_1",
+    "details": {
+      "session_id": "L0_Agent_1-L1_Agent_2-2",
+      "step": 0,
+      "role": "seller",
+      "price": 21,
+      "quantity": 10
+    },
+    "timestamp": 1767772006.461426
+  },
+  {
+    "simulation_id": "sim_1767772006",
+    "day": 2,
+    "event_type": "OFFER_MADE",
+    "agent_id": "L1_Agent_2",
+    "details": {
+      "session_id": "L0_Agent_1-L1_Agent_2-2",
+      "step": 1,
+      "role": "buyer",
+      "price": 16,
+      "quantity": 10
+    },
+    "timestamp": 1767772006.461428
+  },
+  {
+    "simulation_id": "sim_1767772006",
+    "day": 2,
+    "event_type": "CONTRACT_SIGNED",
+    "agent_id": "L0_Agent_1",
+    "details": {
+      "session_id": "L0_Agent_1-L1_Agent_2-2",
+      "step": 1,
+      "final_price": 16,
+      "final_quantity": 10
+    },
+    "timestamp": 1767772006.46143
+  },
+  {
+    "simulation_id": "sim_1767772006",
+    "day": 2,
+    "event_type": "CONTRACT_SIGNED",
+    "agent_id": "SYSTEM",
+    "details": {
+      "seller": "L0_Agent_1",
+      "buyer": "L1_Agent_2",
+      "product": 1,
+      "quantity": 10,
+      "price": 16
+    },
+    "timestamp": 1767772006.46143
+  },
+  {
+    "simulation_id": "sim_1767772006",
+    "day": 2,
+    "event_type": "NEGOTIATION_START",
+    "agent_id": "SYSTEM",
+    "details": {
+      "session_id": "L0_Agent_2-L1_Agent_0-2",
+      "seller": "L0_Agent_2",
+      "buyer": "L1_Agent_0",
+      "product": 1,
+      "seller_reservation": 17,
+      "buyer_reservation": 20
+    },
+    "timestamp": 1767772006.4614332
+  },
+  {
+    "simulation_id": "sim_1767772006",
+    "day": 2,
+    "event_type": "OFFER_MADE",
+    "agent_id": "L1_Agent_0",
+    "details": {
+      "session_id": "L0_Agent_2-L1_Agent_0-2",
+      "step": 0,
+      "role": "buyer",
+      "price": 16,
+      "quantity": 10
+    },
+    "timestamp": 1767772006.4614348
+  },
+  {
+    "simulation_id": "sim_1767772006",
+    "day": 2,
+    "event_type": "OFFER_MADE",
+    "agent_id": "L0_Agent_2",
+    "details": {
+      "session_id": "L0_Agent_2-L1_Agent_0-2",
+      "step": 1,
+      "role": "seller",
+      "price": 20,
+      "quantity": 10
+    },
+    "timestamp": 1767772006.461437
+  },
+  {
+    "simulation_id": "sim_1767772006",
+    "day": 2,
+    "event_type": "CONTRACT_SIGNED",
+    "agent_id": "L1_Agent_0",
+    "details": {
+      "session_id": "L0_Agent_2-L1_Agent_0-2",
+      "step": 1,
+      "final_price": 20,
+      "final_quantity": 10
+    },
+    "timestamp": 1767772006.461439
+  },
+  {
+    "simulation_id": "sim_1767772006",
+    "day": 2,
+    "event_type": "CONTRACT_SIGNED",
+    "agent_id": "SYSTEM",
+    "details": {
+      "seller": "L0_Agent_2",
+      "buyer": "L1_Agent_0",
+      "product": 1,
+      "quantity": 10,
+      "price": 20
+    },
+    "timestamp": 1767772006.461439
+  },
+  {
+    "simulation_id": "sim_1767772006",
+    "day": 2,
+    "event_type": "NEGOTIATION_START",
+    "agent_id": "SYSTEM",
+    "details": {
+      "session_id": "L0_Agent_2-L1_Agent_1-2",
+      "seller": "L0_Agent_2",
+      "buyer": "L1_Agent_1",
+      "product": 1,
+      "seller_reservation": 17,
+      "buyer_reservation": 19
+    },
+    "timestamp": 1767772006.461442
+  },
+  {
+    "simulation_id": "sim_1767772006",
+    "day": 2,
+    "event_type": "OFFER_MADE",
+    "agent_id": "L1_Agent_1",
+    "details": {
+      "session_id": "L0_Agent_2-L1_Agent_1-2",
+      "step": 0,
+      "role": "buyer",
+      "price": 16,
+      "quantity": 10
+    },
+    "timestamp": 1767772006.4614441
+  },
+  {
+    "simulation_id": "sim_1767772006",
+    "day": 2,
+    "event_type": "OFFER_MADE",
+    "agent_id": "L0_Agent_2",
+    "details": {
+      "session_id": "L0_Agent_2-L1_Agent_1-2",
+      "step": 1,
+      "role": "seller",
+      "price": 20,
+      "quantity": 10
+    },
+    "timestamp": 1767772006.4614458
+  },
+  {
+    "simulation_id": "sim_1767772006",
+    "day": 2,
+    "event_type": "OFFER_MADE",
+    "agent_id": "L1_Agent_1",
+    "details": {
+      "session_id": "L0_Agent_2-L1_Agent_1-2",
+      "step": 2,
+      "role": "buyer",
+      "price": 16,
+      "quantity": 10
+    },
+    "timestamp": 1767772006.461449
+  },
+  {
+    "simulation_id": "sim_1767772006",
+    "day": 2,
+    "event_type": "OFFER_MADE",
+    "agent_id": "L0_Agent_2",
+    "details": {
+      "session_id": "L0_Agent_2-L1_Agent_1-2",
+      "step": 3,
+      "role": "seller",
+      "price": 20,
+      "quantity": 10
+    },
+    "timestamp": 1767772006.461451
+  },
+  {
+    "simulation_id": "sim_1767772006",
+    "day": 2,
+    "event_type": "OFFER_MADE",
+    "agent_id": "L1_Agent_1",
+    "details": {
+      "session_id": "L0_Agent_2-L1_Agent_1-2",
+      "step": 4,
+      "role": "buyer",
+      "price": 16,
+      "quantity": 10
+    },
+    "timestamp": 1767772006.4614542
+  },
+  {
+    "simulation_id": "sim_1767772006",
+    "day": 2,
+    "event_type": "OFFER_MADE",
+    "agent_id": "L0_Agent_2",
+    "details": {
+      "session_id": "L0_Agent_2-L1_Agent_1-2",
+      "step": 5,
+      "role": "seller",
+      "price": 20,
+      "quantity": 10
+    },
+    "timestamp": 1767772006.461457
+  },
+  {
+    "simulation_id": "sim_1767772006",
+    "day": 2,
+    "event_type": "OFFER_MADE",
+    "agent_id": "L1_Agent_1",
+    "details": {
+      "session_id": "L0_Agent_2-L1_Agent_1-2",
+      "step": 6,
+      "role": "buyer",
+      "price": 16,
+      "quantity": 10
+    },
+    "timestamp": 1767772006.4614599
+  },
+  {
+    "simulation_id": "sim_1767772006",
+    "day": 2,
+    "event_type": "OFFER_MADE",
+    "agent_id": "L0_Agent_2",
+    "details": {
+      "session_id": "L0_Agent_2-L1_Agent_1-2",
+      "step": 7,
+      "role": "seller",
+      "price": 19,
+      "quantity": 10
+    },
+    "timestamp": 1767772006.461463
+  },
+  {
+    "simulation_id": "sim_1767772006",
+    "day": 2,
+    "event_type": "CONTRACT_SIGNED",
+    "agent_id": "L1_Agent_1",
+    "details": {
+      "session_id": "L0_Agent_2-L1_Agent_1-2",
+      "step": 7,
+      "final_price": 19,
+      "final_quantity": 10
+    },
+    "timestamp": 1767772006.4614642
+  },
+  {
+    "simulation_id": "sim_1767772006",
+    "day": 2,
+    "event_type": "CONTRACT_SIGNED",
+    "agent_id": "SYSTEM",
+    "details": {
+      "seller": "L0_Agent_2",
+      "buyer": "L1_Agent_1",
+      "product": 1,
+      "quantity": 10,
+      "price": 19
+    },
+    "timestamp": 1767772006.4614651
+  },
+  {
+    "simulation_id": "sim_1767772006",
+    "day": 2,
+    "event_type": "NEGOTIATION_START",
+    "agent_id": "SYSTEM",
+    "details": {
+      "session_id": "L0_Agent_2-L1_Agent_2-2",
+      "seller": "L0_Agent_2",
+      "buyer": "L1_Agent_2",
+      "product": 1,
+      "seller_reservation": 17,
+      "buyer_reservation": 19
+    },
+    "timestamp": 1767772006.4614668
+  },
+  {
+    "simulation_id": "sim_1767772006",
+    "day": 2,
+    "event_type": "OFFER_MADE",
+    "agent_id": "L0_Agent_2",
+    "details": {
+      "session_id": "L0_Agent_2-L1_Agent_2-2",
+      "step": 0,
+      "role": "seller",
+      "price": 21,
+      "quantity": 10
+    },
+    "timestamp": 1767772006.461469
+  },
+  {
+    "simulation_id": "sim_1767772006",
+    "day": 2,
+    "event_type": "OFFER_MADE",
+    "agent_id": "L1_Agent_2",
+    "details": {
+      "session_id": "L0_Agent_2-L1_Agent_2-2",
+      "step": 1,
+      "role": "buyer",
+      "price": 16,
+      "quantity": 10
+    },
+    "timestamp": 1767772006.461472
+  },
+  {
+    "simulation_id": "sim_1767772006",
+    "day": 2,
+    "event_type": "OFFER_MADE",
+    "agent_id": "L0_Agent_2",
+    "details": {
+      "session_id": "L0_Agent_2-L1_Agent_2-2",
+      "step": 2,
+      "role": "seller",
+      "price": 20,
+      "quantity": 10
+    },
+    "timestamp": 1767772006.461474
+  },
+  {
+    "simulation_id": "sim_1767772006",
+    "day": 2,
+    "event_type": "OFFER_MADE",
+    "agent_id": "L1_Agent_2",
+    "details": {
+      "session_id": "L0_Agent_2-L1_Agent_2-2",
+      "step": 3,
+      "role": "buyer",
+      "price": 16,
+      "quantity": 10
+    },
+    "timestamp": 1767772006.461477
+  },
+  {
+    "simulation_id": "sim_1767772006",
+    "day": 2,
+    "event_type": "OFFER_MADE",
+    "agent_id": "L0_Agent_2",
+    "details": {
+      "session_id": "L0_Agent_2-L1_Agent_2-2",
+      "step": 4,
+      "role": "seller",
+      "price": 20,
+      "quantity": 10
+    },
+    "timestamp": 1767772006.461479
+  },
+  {
+    "simulation_id": "sim_1767772006",
+    "day": 2,
+    "event_type": "OFFER_MADE",
+    "agent_id": "L1_Agent_2",
+    "details": {
+      "session_id": "L0_Agent_2-L1_Agent_2-2",
+      "step": 5,
+      "role": "buyer",
+      "price": 16,
+      "quantity": 10
+    },
+    "timestamp": 1767772006.461482
+  },
+  {
+    "simulation_id": "sim_1767772006",
+    "day": 2,
+    "event_type": "OFFER_MADE",
+    "agent_id": "L0_Agent_2",
+    "details": {
+      "session_id": "L0_Agent_2-L1_Agent_2-2",
+      "step": 6,
+      "role": "seller",
+      "price": 19,
+      "quantity": 10
+    },
+    "timestamp": 1767772006.461484
+  },
+  {
+    "simulation_id": "sim_1767772006",
+    "day": 2,
+    "event_type": "CONTRACT_SIGNED",
+    "agent_id": "L1_Agent_2",
+    "details": {
+      "session_id": "L0_Agent_2-L1_Agent_2-2",
+      "step": 6,
+      "final_price": 19,
+      "final_quantity": 10
+    },
+    "timestamp": 1767772006.461486
+  },
+  {
+    "simulation_id": "sim_1767772006",
+    "day": 2,
+    "event_type": "CONTRACT_SIGNED",
+    "agent_id": "SYSTEM",
+    "details": {
+      "seller": "L0_Agent_2",
+      "buyer": "L1_Agent_2",
+      "product": 1,
+      "quantity": 10,
+      "price": 19
+    },
+    "timestamp": 1767772006.461486
+  }
+]

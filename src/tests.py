@@ -1,6 +1,16 @@
-from src.entities import MarketState, FactoryProfile, AgentState, Contract, Proposal
+from src.entities import (
+    MarketState,
+    FactoryProfile,
+    AgentState,
+    Contract,
+    Proposal,
+    Product,
+)
 from src.guardian import SymbolicGuardian
+from src.knowledge_graph import KnowledgeGraphManager
 from src.math_kernel import MathKernel
+from src.perception_module import AdvancedPerceptionModule
+from src.workflow import NeuroSymbolicWorkflow
 
 
 def verify_market_dynamics():
@@ -163,3 +173,180 @@ def verify_guardian():
 
 
 verify_guardian()
+
+
+def verify_knowledge_graph():
+    print("\n--- Test 5: Dynamic Knowledge Graph (Ingestion & Retrieval) ---")
+
+    # Note: For this test to run, you need a running Neo4j instance.
+    # If not available, we mock the driver.
+    try:
+        kg = KnowledgeGraphManager()
+        kg.reset_db()
+    except Exception as e:
+        print(f"⚠️ Skipping Graph Test: Neo4j not accessible ({e})")
+        return
+
+    # 1. Setup Static World
+    products = {0: Product(0, "Raw", 10.0), 1: Product(1, "Final", 20.0)}
+    agents = ["Agent_A", "Agent_B"]
+    kg.initialize_static_entities(products, agents)
+
+    # 2. Simulate & Ingest 3 Days
+    # Day 0: Price 10
+    snap_0 = {
+        "day": 0,
+        "market_prices": {0: 10.0},
+        "agents": {"Agent_A": {"bal": 100, "inv": 5}},
+        "contracts": [],
+    }
+    kg.ingest_daily_snapshot(snap_0)
+
+    # Day 1: Price 12 (Inflation)
+    snap_1 = {
+        "day": 1,
+        "market_prices": {0: 12.0},
+        "agents": {"Agent_A": {"bal": 100, "inv": 5}},
+        "contracts": [],
+    }
+    kg.ingest_daily_snapshot(snap_1)
+
+    # 3. Retrieve Context (Window = 2 days)
+    context = kg.retrieve_context_subgraph("Agent_A", 0, current_day=1, window=1)
+
+    print("Retrieved Graph Context:", context)
+
+    # Validation
+    # Should see Day 1 (Price 12) first, then Day 0 (Price 10)
+    assert len(context) == 2, "Graph retrieval failed to look back correct window size"
+    assert context[0]["market_price"] == 12.0, "Most recent data (Day 1) incorrect"
+    assert context[1]["market_price"] == 10.0, "Historical data (Day 0) incorrect"
+
+    print("✅ Knowledge Graph Ingestion & Retrieval verified.")
+    kg.close()
+
+
+# Uncomment to run if Neo4j is active
+# verify_knowledge_graph()
+
+
+def verify_langgraph_flow():
+    print("\n--- Test 7: LangGraph Orchestration (Self-Correction) ---")
+
+    # 1. Setup Dummies
+    # KG Mock: Returns high market price to tempt agent
+    class MockKG:
+        def retrieve_context_subgraph(self, **kwargs):
+            return [
+                {"market_price": 50.0, "my_balance": 100, "my_stock": 0}
+            ]  # Price 50
+
+    # Strategist Mock: Always wants to BUY 10 units (Cost 500 > Balance 100) -> ILLEGAL
+    class MockStrategist:
+        def generate_proposal(self, *args):
+            return Proposal("buy", q_buy=10, unit_price_buy=50.0)
+
+    # Guardian: Real Logic
+    prof = FactoryProfile("A0", 0, 10, 2.0, 0, 0, 0, 0)
+    guardian = SymbolicGuardian(prof)
+
+    # 2. Build Workflow
+    workflow = NeuroSymbolicWorkflow(MockKG(), MockStrategist(), guardian)
+
+    # 3. Run Input State
+    input_state = {
+        "simulation_day": 5,
+        "current_balance": 100.0,  # Poor agent
+        "current_inventory": 0,
+        "market_price": 50.0,
+        "graph_context": [],
+        "strategic_intent": "",
+        "tactical_params": {},
+        "proposal": None,
+        "guardian_feedback": None,
+        "is_compliant": False,
+        "final_contract": None,
+    }
+
+    # 4. Execute
+    # recursion_limit=3 allows it to retry twice
+    final_state = workflow.app.invoke(input_state, config={"recursion_limit": 10})
+
+    print(f"Final Outcome: {final_state['proposal']}")
+    print(f"Was Compliant: {final_state['is_compliant']}")
+
+    # 5. Assertions
+    # The logic in 'node_generate' cuts quantity by 50% on rejection.
+    # Initial: Buy 10 @ 50 = 500 (Fail)
+    # Retry 1: Buy 5 @ 50 = 250 (Fail)
+    # Retry 2: Buy 2 @ 50 = 100 (Pass) -> Matches Balance 100
+
+    q_final = final_state["proposal"].q_buy
+    cost_final = q_final * 50.0
+
+    assert (
+        cost_final <= 100.0
+    ), f"LangGraph failed to correct budget! Cost {cost_final} > 100"
+    print(
+        "✅ LangGraph successfully caught violation and iterated to a valid solution."
+    )
+
+
+verify_langgraph_flow()
+
+
+def verify_rag4dyg_retrieval():
+    print("\n--- Test 8: RAG4DyG & DySK-Attn (Time-Aware Retrieval) ---")
+
+    # 1. Setup KG Mock with controlled data
+    class MockSession:
+        def run(self, query, **kwargs):
+            # Simulation of what Neo4j would return after calculating weights
+            # Scenario:
+            # Day 0: Huge shock (Price 100). Distance = 10 days.
+            # Day 9: Normal price (Price 20). Distance = 1 day.
+
+            # Weight calc: exp(-0.5 * distance)
+            # Day 0: exp(-5.0) ≈ 0.006 -> Score 0.006
+            # Day 9: exp(-0.5) ≈ 0.606 -> Score 0.606
+
+            # The query should return Day 9 first because Score 0.606 > 0.006
+            return [
+                {
+                    "event": {
+                        "type": "market_price",
+                        "value": 20.0,
+                        "day": 9,
+                        "score": 0.606,
+                    }
+                },
+                {
+                    "event": {
+                        "type": "market_price",
+                        "value": 100.0,
+                        "day": 0,
+                        "score": 0.006,
+                    }
+                },
+            ]
+
+    class MockKG:
+        driver = type("obj", (object,), {"session": lambda: MockSession()})
+
+    # 2. Run Retrieval
+    perception = AdvancedPerceptionModule(MockKG())
+    # We ask for Top-1 to see which one wins (Sparsity check)
+    results = perception.retrieve_dysk_subgraph("A", 0, 10, decay_lambda=0.5, top_k=1)
+
+    # 3. Verify
+    print("Retrieved Top-1 Event:", results)
+
+    # Assertion: We should see Day 9 (Price 20), not Day 0 (Price 100)
+    assert results[0]["value"] == 20.0, "DySK-Attn failed to prioritize recency!"
+    assert len(results) == 1, "DySK-Attn failed to enforce sparsity (Top-K)!"
+
+    print("✅ RAG4DyG successfully prioritized recent context.")
+    print("✅ DySK-Attn successfully pruned the graph.")
+
+
+verify_rag4dyg_retrieval()

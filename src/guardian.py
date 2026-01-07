@@ -1,5 +1,4 @@
-from constraint import Solver
-from z3 import RealVal, ToReal, sat, Int, Optimize
+from z3 import RealVal, ToReal, sat, Int, Optimize, Solver
 
 from src.entities import FactoryProfile, AgentState, Proposal
 
@@ -18,8 +17,8 @@ class SymbolicGuardian:
 
         # --- 1. Define Symbolic Variables ---
         # We verify the specific numbers in the proposal
-        q_b = Int('q_buy')
-        q_s = Int('q_sell')
+        q_b = Int("q_buy")
+        q_s = Int("q_sell")
 
         # --- 2. Add 'Physics' Constraints (The Axioms) ---
 
@@ -69,7 +68,7 @@ class SymbolicGuardian:
         Useful for guiding the LLM: "You can buy at most X units."
         """
         opt = Optimize()
-        q_b = Int('q_buy')
+        q_b = Int("q_buy")
 
         # Add minimal constraints for a "Buy Only" scenario
         opt.add(q_b >= 0)
