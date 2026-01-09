@@ -1,6 +1,5 @@
 from __future__ import annotations
 
-import logging
 import time
 from typing import Callable, TypeVar, Optional
 
@@ -8,10 +7,9 @@ from neo4j import GraphDatabase, Driver, Session
 from neo4j.exceptions import TransientError
 
 from src.settings.settings import settings
+from src.utils.logger import logger
 
 T = TypeVar("T")
-
-logger = logging.getLogger(__name__)
 
 
 class Neo4jClient:
@@ -46,6 +44,13 @@ class Neo4jClient:
     def execute_read(self, work: Callable[[Session], T]) -> T:
         return self._execute(work, write=False)
 
+    def clear_database(self) -> None:
+        def _clear(tx):
+            tx.run("MATCH (n) DETACH DELETE n")
+
+        self.execute_write(_clear)
+        logger.warning("Neo4j database cleared")
+
     def _execute(self, work: Callable[[Session], T], *, write: bool) -> T:
         attempt = 0
         while True:
@@ -68,13 +73,6 @@ class Neo4jClient:
                     sleep_time,
                 )
                 time.sleep(sleep_time)
-
-    def clear_database(self) -> None:
-        def _clear(tx):
-            tx.run("MATCH (n) DETACH DELETE n")
-
-        self.execute_write(_clear)
-        logger.warning("Neo4j database cleared")
 
 
 neo4j_client = Neo4jClient(uri=settings.NEO4J_URI, user=settings.NEO4J_USER, password=settings.NEO4J_PASSWORD)

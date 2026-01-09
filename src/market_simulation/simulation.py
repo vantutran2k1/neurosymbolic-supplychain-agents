@@ -1,43 +1,58 @@
 import json
-import logging
 import random
 from pathlib import Path
-from typing import List, Dict, Any
+from typing import Any
 
 from src.market_simulation.config import SimulationConfig
 from src.market_simulation.entities import ResponseType
 from src.market_simulation.market import MarketPhysics
 from src.market_simulation.strategic_agent import StrategicAgent
-
-logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(message)s")
-logger = logging.getLogger("SCML_Lab")
+from src.utils.logger import logger
 
 
 class ResearchSimulator:
     def __init__(self, config: SimulationConfig):
         self.cfg = config
         self.market = MarketPhysics(config.market)
-        self.agents: List[StrategicAgent] = []
-        self.logs: List[Dict[str, Any]] = []
+        self.agents: list[StrategicAgent] = []
+        self.logs: list[dict[str, Any]] = []
+
         self._initialize_agents()
 
-    def _initialize_agents(self):
-        # Initialize with enough resources to start
-        start_bal = 5000
-        start_inv = 50
+    def run(self):
+        logger.info(f"Simulating {self.cfg.total_days} days...")
+        random.seed(self.cfg.seed)
 
+        for day in range(self.cfg.total_days):
+            self.market.step()
+
+            self._daily_reset()
+
+            sellers = [a for a in self.agents if not a.is_buyer]
+            buyers = [a for a in self.agents if a.is_buyer]
+            random.shuffle(sellers)
+            random.shuffle(buyers)
+
+            for buyer in buyers:
+                if sellers:
+                    seller = random.choice(sellers)
+                    self._negotiate(day, self.market.current_price, seller, buyer)
+
+        self._save_data()
+
+    def _initialize_agents(self):
         for grp in self.cfg.suppliers:
             for i in range(grp.count):
                 self.agents.append(
                     StrategicAgent(
                         agent_id=f"{grp.name_prefix}_{i}",
                         is_buyer=False,
-                        config_strategy=grp.strategy,
                         concession_e=grp.concession_exponent,
                         reservation_margin=grp.reservation_margin,
                         noise=grp.noise_factor,
-                        initial_balance=start_bal,
-                        initial_inventory=start_inv,
+                        initial_balance=grp.initial_balance,
+                        initial_inventory=grp.initial_inventory,
+                        production_capacity=grp.production_capacity,
                     )
                 )
 
@@ -47,59 +62,25 @@ class ResearchSimulator:
                     StrategicAgent(
                         agent_id=f"{grp.name_prefix}_{i}",
                         is_buyer=True,
-                        config_strategy=grp.strategy,
                         concession_e=grp.concession_exponent,
                         reservation_margin=grp.reservation_margin,
                         noise=grp.noise_factor,
-                        initial_balance=start_bal,
-                        initial_inventory=start_inv,
+                        initial_balance=grp.initial_balance,
+                        initial_inventory=grp.initial_inventory,
+                        production_capacity=grp.production_capacity,
                     )
                 )
 
     def _daily_reset(self):
-        """
-        Simulates the 'External World'.
-        Agents consume raw materials to make products (Inventory decrease)
-        and sell products to end-users (Balance increase).
-        This keeps the economy flowing.
-        """
+        # TODO: fix temporary hard coded values solution
         for agent in self.agents:
-            # 1. Production/Consumption
-            # Sellers (Suppliers) 'mine' raw materials -> Inventory Gain
             if not agent.is_buyer:
-                production = 10
-                agent.inventory += production
-
-            # Buyers (Manufacturers) 'process' raw materials -> Inventory Loss, Balance Gain
+                agent.inventory += 100
             else:
-                consumption = min(agent.inventory, 10)  # Process what we have
+                consumption = min(agent.inventory, 10)
                 agent.inventory -= consumption
-                # Sell finished goods to external market
                 revenue = consumption * (self.market.current_price * 1.5)
                 agent.balance += revenue
-
-    def run(self):
-        logger.info(f"🚀 Simulating {self.cfg.total_days} days...")
-        random.seed(self.cfg.seed)
-
-        for day in range(self.cfg.total_days):
-            self.market.step()
-            self._daily_reset()  # <--- NEW: Keep agents alive
-
-            # Shuffle agents to mix matchups
-            sellers = [a for a in self.agents if not a.is_buyer]
-            buyers = [a for a in self.agents if a.is_buyer]
-            random.shuffle(sellers)
-            random.shuffle(buyers)
-
-            # Limit number of sessions per day to avoid huge log files
-            # (e.g., each buyer talks to 1 random seller per day)
-            for buyer in buyers:
-                if sellers:
-                    seller = random.choice(sellers)
-                    self._negotiate(day, self.market.current_price, seller, buyer)
-
-        self._save_data()
 
     def _negotiate(self, day: int, market_p: float, seller: StrategicAgent, buyer: StrategicAgent):
         session_id = f"{seller.id}-{buyer.id}-D{day}"
@@ -176,16 +157,17 @@ class ResearchSimulator:
                 return
 
             elif response == ResponseType.END_NEGOTIATION:
-                self.logs.append({"event": "FAILED", "sid": session_id, "reason": "walkaway", "step": step})
+                self.logs.append(
+                    {"event": "FAILED", "sid": session_id, "reason": "offer price not in valid range", "step": step}
+                )
                 return
 
             turn = "seller" if turn == "buyer" else "buyer"
             step += 1
 
-        self.logs.append({"event": "FAILED", "sid": session_id, "reason": "timeout"})
+        self.logs.append({"event": "FAILED", "sid": session_id, "reason": "exceed max negotiation step", "step": max_s})
 
     def _save_data(self):
-        # Same as before...
         path = Path(self.cfg.output_file)
         path.parent.mkdir(parents=True, exist_ok=True)
         with open(path, "w") as f:
